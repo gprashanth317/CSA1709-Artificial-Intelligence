@@ -1,0 +1,21 @@
+{
+  "name": "ai-campus-assistant",
+  "version": "1.0.0",
+  "description": "AI Chatbot for Student Query Assistance & Campus Information",
+  "main": "server.js",
+  "bin": {
+    "gunicorn": "./bin/gunicorn.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'Build complete'"
+  },
+  "keywords": [
+    "ai",
+    "chatbot",
+    "campus",
+    "nlu"
+  ],
+  "author": "gprashanth317",
+  "license": "MIT"
+}
