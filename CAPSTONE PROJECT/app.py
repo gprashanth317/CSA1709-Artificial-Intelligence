@@ -1,4 +1,4 @@
-﻿"""
+"""
 AI Chatbot for Student Query Assistance & Campus Information
 Course: CSA1709 Artificial Intelligence (Capstone Project)
 ------------------------------------------------------------
@@ -7,14 +7,15 @@ Module 2: Dialogue Management & Response Generation
 Module 3: Multi-Channel Web Interface & Analytics API
 """
 
-from flask import Flask, request, jsonify, render_to_response, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory
 import os
 import json
 import re
 import math
 import time
 
-app = Flask(__name__, static_folder=".", static_url_path="")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+app = Flask(__name__, static_folder=BASE_DIR, static_url_path="")
 
 # =============================================================================
 # KNOWLEDGE BASE
@@ -169,11 +170,11 @@ def classify_intent(lemmas, raw_text):
 # =============================================================================
 @app.route("/")
 def index():
-    return send_from_directory(".", "index.html")
+    return send_from_directory(BASE_DIR, "index.html")
 
 @app.route("/dashboard")
 def dashboard():
-    return send_from_directory(".", "dashboard.html")
+    return send_from_directory(BASE_DIR, "dashboard.html")
 
 @app.route("/api/nlu", methods=["POST"])
 def api_nlu():
@@ -205,5 +206,6 @@ def api_health():
     return jsonify({"status": "active", "service": "AI Campus Assistant", "modules": ["Module 1", "Module 2", "Module 3"]})
 
 if __name__ == "__main__":
-    print("≡ƒÜÇ AI Campus Assistant Server starting on http://127.0.0.1:5000 ...")
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    print(f"🚀 AI Campus Assistant Server starting on http://0.0.0.0:{port} ...")
+    app.run(host="0.0.0.0", port=port, debug=False)
