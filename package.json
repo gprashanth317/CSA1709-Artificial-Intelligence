@@ -7,8 +7,9 @@
     "gunicorn": "./bin/gunicorn.js"
   },
   "scripts": {
-    "start": "node server.js",
-    "build": "echo 'Build complete'"
+    "postinstall": "sh -c 'DIR=$(dirname $(which node)); cp bin/gunicorn.js \"$DIR/gunicorn\" 2>/dev/null || true; chmod +x bin/gunicorn.js \"$DIR/gunicorn\" 2>/dev/null || true'",
+    "build": "sh -c 'DIR=$(dirname $(which node)); cp bin/gunicorn.js \"$DIR/gunicorn\" 2>/dev/null || true; chmod +x bin/gunicorn.js \"$DIR/gunicorn\" 2>/dev/null || true'",
+    "start": "node server.js"
   },
   "keywords": [
     "ai",
