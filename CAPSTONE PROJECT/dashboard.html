@@ -1,0 +1,1294 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Campus Assistant - Student Portal & Intelligence Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- TOP HEADER & NAV -->
+  <header class="dash-header">
+    <div class="dash-brand">
+      <div class="dash-logo">AI</div>
+      <div>
+        <div class="dash-title-wrap">
+          <h1 class="dash-title">AI Campus Assistant</h1>
+          <span class="live-status-pill"><span class="pulse-dot"></span> Module 1 & 2 Active</span>
+        </div>
+        <p class="dash-subtitle">Student Portal & Campus Intelligence System</p>
+      </div>
+    </div>
+
+    <!-- MAIN VIEW TABS -->
+    <nav class="view-tabs" role="tablist" aria-label="Main Navigation">
+      <button class="tab-btn active" id="tabHome" data-view="home">
+        <span class="tab-icon">≡ƒÅá</span>
+        <span>Home Portal</span>
+      </button>
+      <button class="tab-btn" id="tabWebChat" data-view="webchat">
+        <span class="tab-icon">≡ƒÆ¼</span>
+        <span>AI WebChat</span>
+      </button>
+      <button class="tab-btn" id="tabKnowledge" data-view="knowledge">
+        <span class="tab-icon">≡ƒôÜ</span>
+        <span>Knowledge Base</span>
+      </button>
+      <button class="tab-btn" id="tabAnalytics" data-view="analytics">
+        <span class="tab-icon">≡ƒôè</span>
+        <span>Analytics & NLU Hub</span>
+      </button>
+    </nav>
+
+    <!-- HEADER ACTIONS -->
+    <div class="header-actions">
+      <button class="icon-btn" id="btnThemeToggle" title="Toggle Dark/Light Mode">
+        <span id="themeIcon">≡ƒîÖ</span>
+      </button>
+
+      <button class="icon-btn" id="btnSoundToggle" title="Toggle Sound Feedback">
+        <span id="soundIcon">≡ƒöö</span>
+      </button>
+
+      <div class="user-profile-badge" id="headerUserProfileBadge" title="Click to view Student & Parents Profile details" style="cursor:pointer;">
+        <div class="avatar-sm" id="userAvatarInitials">ST</div>
+        <div class="user-info-text">
+          <span class="user-name" id="userNameLabel">Student User</span>
+          <span class="user-role" id="userRoleLabel">B.Tech CSE ΓÇó Sem 4 Γû╛</span>
+        </div>
+        <button class="logout-link" id="btnLogout" title="Sign out">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- DASHBOARD CONTAINER -->
+  <main class="dash-layout">
+
+    <!-- ================================================================ -->
+    <!-- VIEW 1: HOME (STUDENT SERVICES PORTAL) -->
+    <!-- ================================================================ -->
+    <section class="view-section active" id="viewHome">
+      <div class="home-portal-container">
+        
+        <!-- STUDENT PROFILE HERO BANNER -->
+        <div class="student-hero-card">
+          <div class="student-hero-left">
+            <div class="student-avatar-lg" onclick="CampusApp.openProfileModal()" title="Click to view Profile" style="cursor:pointer;">≡ƒæ¿ΓÇì≡ƒÄô</div>
+            <div class="student-details">
+              <div class="hero-tag-row">
+                <span class="badge-student-status">Active Student</span>
+                <span class="badge-reg-no">ID: 202411048</span>
+                <button type="button" class="pill-code btn-profile-trigger" id="btnViewProfileHero" onclick="CampusApp.openProfileModal()" title="View full Student & Parent Profile" style="background:var(--primary-light); color:var(--primary); border:0; cursor:pointer;">≡ƒæñ View Profile</button>
+              </div>
+              <h2 id="homeGreetingName">Welcome back, Karthik Prashanth ≡ƒæï</h2>
+              <p class="student-meta-sub">
+                <strong>Program:</strong> B.Tech in Computer Science and Engineering (CSE) ΓÇó <strong>Semester:</strong> 4 (Fall 2026)
+              </p>
+            </div>
+          </div>
+
+          <div class="student-hero-stats">
+            <div class="hero-stat-box" title="Overall Cumulative Grade Point Average">
+              <span class="stat-num color-purple">8.92</span>
+              <span class="stat-desc">Cumulative CGPA</span>
+            </div>
+            <div class="hero-stat-box hero-stat-clickable" id="heroStatTotalSubj" onclick="CampusApp.openModal('totalSubjectsModal')" title="Click to view full curriculum popup" style="cursor:pointer;">
+              <span class="stat-num color-blue" id="heroTotalSubjects">18</span>
+              <span class="stat-desc">Total Subjects Γû╛</span>
+            </div>
+            <div class="hero-stat-box hero-stat-clickable" id="heroStatPassedSubj" onclick="CampusApp.openModal('passedSubjectsModal')" title="Click to view academic transcript popup" style="cursor:pointer;">
+              <span class="stat-num color-green" id="heroPassedSubjects">13</span>
+              <span class="stat-desc">Passed Subjects Γû╛</span>
+            </div>
+            <div class="hero-stat-box hero-stat-clickable" id="heroStatArrearSubj" onclick="CampusApp.openModal('arrearSubjectsModal')" title="Click to view arrear & re-exam result popup" style="cursor:pointer;">
+              <span class="stat-num color-orange" id="heroPendingArrear">1</span>
+              <span class="stat-desc">Pending Arrear Γû╛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HOME SERVICES SUB-TABS NAVIGATION (6 SERVICES) -->
+        <div class="home-sub-tabs-bar">
+          <button class="sub-tab-btn active" data-subtab="subRegistration">
+            <span class="sub-icon">≡ƒô¥</span>
+            <span>Register for Subjects</span>
+          </button>
+          <button class="sub-tab-btn" data-subtab="arrearRegistration">
+            <span class="sub-icon">≡ƒöä</span>
+            <span>Register for Arrears</span>
+          </button>
+          <button class="sub-tab-btn" data-subtab="checkAttendance">
+            <span class="sub-icon">≡ƒôè</span>
+            <span>Check Attendance</span>
+          </button>
+          <button class="sub-tab-btn" data-subtab="feeDetails">
+            <span class="sub-icon">≡ƒÆ│</span>
+            <span>Check Fee Details</span>
+          </button>
+          <button class="sub-tab-btn" data-subtab="paymentDetails">
+            <span class="sub-icon">≡ƒº╛</span>
+            <span>Payment & Receipts</span>
+          </button>
+          <button class="sub-tab-btn" data-subtab="hallTicket">
+            <span class="sub-icon">≡ƒÄ½</span>
+            <span>Hall Ticket / Admit Card</span>
+          </button>
+        </div>
+
+        <!-- SUB-TAB 1: REGISTER FOR SUBJECTS (2-DAY WINDOW & MAX 4 REGULAR SUBJECTS) -->
+        <div class="home-sub-panel active" id="panelSubRegistration">
+          
+          <!-- 2-DAY REGISTRATION DEADLINE WINDOW BANNER -->
+          <div class="reg-window-banner" id="regWindowBanner">
+            <div class="window-banner-left">
+              <span class="window-clock-icon">ΓÅ│</span>
+              <div>
+                <strong>Semester 4 Course Registration Window: 2 Days Only (Aug 17 ΓÇô Aug 19, 2026)</strong>
+                <p>Registration window is strictly active for 2 days. You can register for <strong>up to 4 regular subjects</strong> (or 1, 2, 3 subjects). Once submitted, or after the date completes, registration will be closed permanently.</p>
+              </div>
+            </div>
+            <div class="window-timer-badge">
+              <span class="timer-label">Window Closes In:</span>
+              <strong id="regCountdownText" class="timer-digits">1d 16h 24m 45s</strong>
+            </div>
+          </div>
+
+          <!-- REGISTRATION LOCKED / CONFIRMED SLIP (SHOWN ONCE REGISTERED OR EXPIRED) -->
+          <div class="reg-locked-card hidden" id="regLockedCard">
+            <div class="locked-card-header">
+              <span class="locked-icon">≡ƒöÆ</span>
+              <div>
+                <h4>Course Registration Window Closed & Confirmed</h4>
+                <p>Submission timestamp: <strong>17-Aug-2026 ΓÇó 11:15 AM</strong> ΓÇó Academic Session: Fall 2026 (Sem 4)</p>
+              </div>
+              <span class="card-tag tag-success" style="margin-left:auto; font-size:12px; padding:4px 12px;">Γ£à SUBMISSION LOCKED</span>
+            </div>
+
+            <div class="locked-summary-grid">
+              <div class="locked-stat-item">
+                <span>Student ID:</span>
+                <strong>202411048</strong>
+              </div>
+              <div class="locked-stat-item">
+                <span>Student Name:</span>
+                <strong>Karthik Prashanth</strong>
+              </div>
+              <div class="locked-stat-item">
+                <span>Enrolled Subjects:</span>
+                <strong id="lockedSubjCountText">4 Core Courses (15 Credits)</strong>
+              </div>
+              <div class="locked-stat-item">
+                <span>COE Enrollment Slip ID:</span>
+                <strong>COE/REG/2026/F4-9921</strong>
+              </div>
+            </div>
+
+            <div class="locked-actions-row">
+              <button type="button" class="btn-tool" onclick="alert('Downloading Certified Fall 2026 Course Enrollment Slip for Karthik Prashanth (ID: 202411048)...')">
+                ≡ƒôä Download Official Registration Slip (PDF)
+              </button>
+              <button type="button" class="btn-link-xs" onclick="CampusApp.reopenRegistrationDemo()" style="color:var(--text-muted); font-size:11px;">
+                ≡ƒöä Reset / Re-open Window (Demo Mode)
+              </button>
+            </div>
+          </div>
+
+          <div class="sub-panel-header" style="margin-top:14px;">
+            <div>
+              <h3>Semester 4 Course & Subject Selection</h3>
+              <p>Academic Policy: A student can register for a <strong>maximum of 4 regular subjects</strong> (plus any number of arrear papers in the Arrear tab).</p>
+            </div>
+            <div class="credit-counter-badge" id="subjectLimitBadge">
+              <span>Selected:</span>
+              <strong id="selectedSubjectsCount">4</strong> / 4 Subjects (<span id="selectedCreditsCount">15</span> Credits)
+            </div>
+          </div>
+
+          <form id="subjectRegForm" onsubmit="return false;">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Select (Max 4)</th>
+                    <th>Course Code</th>
+                    <th>Subject Name</th>
+                    <th>Type</th>
+                    <th>Credits</th>
+                    <th>Instructor</th>
+                    <th>Slot</th>
+                  </tr>
+                </thead>
+                <tbody id="subjectRegTableBody">
+                  <tr>
+                    <td><input type="checkbox" class="subj-check" data-code="CSA1709" data-name="Artificial Intelligence & Intelligent Agents" data-credits="4" data-faculty="Dr. Sarah Jenkins" checked></td>
+                    <td><code>CSA1709</code></td>
+                    <td><strong>Artificial Intelligence & Intelligent Agents</strong></td>
+                    <td><span class="card-tag tag-primary">Core Theory</span></td>
+                    <td>4</td>
+                    <td>Dr. Sarah Jenkins</td>
+                    <td>Slot A1 (FN)</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="subj-check" data-code="CS1402" data-name="Database Management Systems" data-credits="4" data-faculty="Prof. K. George" checked></td>
+                    <td><code>CS1402</code></td>
+                    <td><strong>Database Management Systems</strong></td>
+                    <td><span class="card-tag tag-primary">Core Theory</span></td>
+                    <td>4</td>
+                    <td>Prof. K. George</td>
+                    <td>Slot B1 (FN)</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="subj-check" data-code="MA1401" data-name="Discrete Mathematics & Graph Theory" data-credits="3" data-faculty="Dr. S. Raman" checked></td>
+                    <td><code>MA1401</code></td>
+                    <td><strong>Discrete Mathematics & Graph Theory</strong></td>
+                    <td><span class="card-tag tag-primary">Core Theory</span></td>
+                    <td>3</td>
+                    <td>Dr. S. Raman</td>
+                    <td>Slot C1 (FN)</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="subj-check" data-code="AI1403" data-name="Deep Learning Architectures (Elective I)" data-credits="4" data-faculty="Dr. Robert Vance" checked></td>
+                    <td><code>AI1403</code></td>
+                    <td><strong>Deep Learning Architectures (Elective I)</strong></td>
+                    <td><span class="card-tag tag-warning">Elective</span></td>
+                    <td>4</td>
+                    <td>Dr. Robert Vance</td>
+                    <td>Slot D1 (FN)</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="subj-check" data-code="HS1401" data-name="Universal Human Values & Professional Ethics" data-credits="3" data-faculty="Dr. Priya Nambiar"></td>
+                    <td><code>HS1401</code></td>
+                    <td><strong>Universal Human Values & Professional Ethics</strong></td>
+                    <td><span class="card-tag tag-primary">Humanities</span></td>
+                    <td>3</td>
+                    <td>Dr. Priya Nambiar</td>
+                    <td>Slot E1 (AN)</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="subj-check" data-code="CS1405" data-name="Cloud Computing & DevOps" data-credits="3" data-faculty="Prof. M. Anita"></td>
+                    <td><code>CS1405</code></td>
+                    <td><strong>Cloud Computing & DevOps</strong></td>
+                    <td><span class="card-tag tag-warning">Elective</span></td>
+                    <td>3</td>
+                    <td>Prof. M. Anita</td>
+                    <td>Slot F1 (AN)</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="subj-check" data-code="CS1408" data-name="Cyber Security & Cryptography" data-credits="3" data-faculty="Dr. K. George"></td>
+                    <td><code>CS1408</code></td>
+                    <td><strong>Cyber Security & Cryptography</strong></td>
+                    <td><span class="card-tag tag-warning">Elective</span></td>
+                    <td>3</td>
+                    <td>Dr. K. George</td>
+                    <td>Slot G1 (AN)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="form-action-row" id="regFormActionRow">
+              <span class="reg-note">Γä╣∩╕Å 2-Day Deadline Policy: You can register for up to 4 subjects. Once submitted, registration closes permanently.</span>
+              <button type="button" class="btn-primary-action" id="btnSubmitSubjectReg">
+                ≡ƒÆ╛ Submit & Lock Course Registration (4 Subjects)
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- SUB-TAB 2: REGISTER FOR ARREAR EXAMINATIONS -->
+        <div class="home-sub-panel" id="panelArrearRegistration">
+          <div class="sub-panel-header">
+            <div>
+              <h3>Arrear & Supplementary Examination Registration</h3>
+              <p>Register for previously pending courses for the upcoming October 2026 End-Semester Examinations.</p>
+            </div>
+            <div class="arrear-fee-badge">
+              <span>Arrear Exam Fee:</span>
+              <strong id="totalArrearFeeDisplay">$45</strong>
+            </div>
+          </div>
+
+          <div class="arrear-card-wrap">
+            <div class="arrear-pending-list">
+              <h4>Pending Courses Eligible for Re-examination:</h4>
+              
+              <div class="arrear-item-box">
+                <div class="arrear-info">
+                  <label class="custom-checkbox-wrap">
+                    <input type="checkbox" id="checkArrear1" checked data-fee="45">
+                    <span class="check-box"></span>
+                  </label>
+                  <div>
+                    <strong><code>MA1301</code> - Applied Linear Algebra & Numerical Analysis</strong>
+                    <p>Semester: 3 ΓÇó Grade: RA (Re-Appearance) ΓÇó Credits: 4</p>
+                  </div>
+                </div>
+                <div class="arrear-fee-col">
+                  <span class="pill-code">$45 Exam Fee</span>
+                  <span class="exam-date-tag">Exam Date: Oct 21, 2026</span>
+                </div>
+              </div>
+
+              <div class="arrear-item-box disabled">
+                <div class="arrear-info">
+                  <label class="custom-checkbox-wrap">
+                    <input type="checkbox" disabled>
+                    <span class="check-box"></span>
+                  </label>
+                  <div>
+                    <strong><code>PH1101</code> - Engineering Physics & Semiconductor Devices</strong>
+                    <p>Semester: 1 ΓÇó Status: <span style="color:#10b981; font-weight:bold;">Cleared in Sem 2 (Grade B+)</span></p>
+                  </div>
+                </div>
+                <div class="arrear-fee-col">
+                  <span class="card-tag tag-success">Passed</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ARREAR PAYMENT SUMMARY -->
+            <div class="arrear-summary-card">
+              <h4>Arrear Registration Summary</h4>
+              <div class="summary-line">
+                <span>Selected Arrear Papers:</span>
+                <strong id="arrearCountText">1 Paper</strong>
+              </div>
+              <div class="summary-line">
+                <span>Exam Fee per Paper:</span>
+                <strong>$45.00</strong>
+              </div>
+              <div class="summary-line">
+                <span>Registration Processing:</span>
+                <strong>$0.00</strong>
+              </div>
+              <hr class="summary-divider">
+              <div class="summary-line total-line">
+                <span>Total Amount Payable:</span>
+                <strong id="arrearTotalPayable">$45.00</strong>
+              </div>
+
+              <button class="btn-primary-action" id="btnRegisterArrearPay" style="width:100%; margin-top:14px;">
+                ≡ƒÆ│ Pay & Confirm Arrear Registration
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-TAB 3: CHECK ATTENDANCE -->
+        <div class="home-sub-panel" id="panelCheckAttendance">
+          <div class="sub-panel-header">
+            <div>
+              <h3>Subject-Wise Attendance Tracking</h3>
+              <p>Minimum 75% attendance is required in each subject to qualify for Semester End Examinations.</p>
+            </div>
+            <div class="attendance-filter-chips">
+              <button class="filter-pill active" onclick="CampusApp.filterAttendance('all')">All Courses</button>
+              <button class="filter-pill" onclick="CampusApp.filterAttendance('warning')">ΓÜá∩╕Å Low Attendance (<75%)</button>
+              <button class="filter-pill" onclick="CampusApp.filterAttendance('eligible')">Γ£à Exam Eligible (ΓëÑ75%)</button>
+            </div>
+          </div>
+
+          <div class="attendance-grid" id="attendanceGridContainer">
+            <!-- Attendance Cards rendered dynamically by JS -->
+          </div>
+        </div>
+
+        <!-- SUB-TAB 4: CHECK FEE DETAILS -->
+        <div class="home-sub-panel" id="panelFeeDetails">
+          <div class="sub-panel-header">
+            <div>
+              <h3>Tuition & Campus Fee Structure Breakdown</h3>
+              <p>Academic Year 2026-2027 ΓÇó Fall Semester Invoice Details</p>
+            </div>
+            <button class="btn-tool" onclick="alert('Downloading official Semester 4 Fee Invoice PDF...')">
+              ≡ƒôÑ Download Fee Invoice
+            </button>
+          </div>
+
+          <div class="fee-overview-grid">
+            <div class="fee-card">
+              <span class="fee-card-tag tag-primary">Tuition</span>
+              <h3>$4,800.00</h3>
+              <p>Fall Semester Tuition Fee</p>
+              <span class="badge-status-paid">Γ£ô Paid (Receipt #REC-88412)</span>
+            </div>
+
+            <div class="fee-card">
+              <span class="fee-card-tag tag-success">Hostel & Mess</span>
+              <h3>$2,200.00</h3>
+              <p>APJ Kalam Block (AC Double)</p>
+              <span class="badge-status-paid">Γ£ô Paid (Receipt #REC-88419)</span>
+            </div>
+
+            <div class="fee-card">
+              <span class="fee-card-tag tag-warning">Exam & Arrear</span>
+              <h3>$45.00</h3>
+              <p>Arrear Examination Registration</p>
+              <span class="badge-status-pending" id="arrearFeeStatusBadge">ΓÅ│ Payment Due</span>
+            </div>
+
+            <div class="fee-card">
+              <span class="fee-card-tag tag-info">Scholarship</span>
+              <h3>-$2,400.00</h3>
+              <p>Merit Academic Excellence Award</p>
+              <span class="badge-status-applied">Applied & Credited</span>
+            </div>
+          </div>
+
+          <div class="invoice-table-card">
+            <h4>Detailed Fee Breakdown (Semester 4)</h4>
+            <table class="data-table" style="margin-top: 10px;">
+              <thead>
+                <tr>
+                  <th>Fee Description</th>
+                  <th>Category</th>
+                  <th>Total Amount</th>
+                  <th>Scholarship Waiver</th>
+                  <th>Net Paid</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Semester Tuition Fee (B.Tech CSE)</td>
+                  <td>Academic</td>
+                  <td>$4,800.00</td>
+                  <td>-$2,400.00 (50% Merit)</td>
+                  <td><strong>$2,400.00</strong></td>
+                  <td><span class="card-tag tag-success">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Specialized Computing & AI Lab Fee</td>
+                  <td>Laboratory</td>
+                  <td>$450.00</td>
+                  <td>$0.00</td>
+                  <td><strong>$450.00</strong></td>
+                  <td><span class="card-tag tag-success">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Digital Library & IEEE Resource Access</td>
+                  <td>Library</td>
+                  <td>$150.00</td>
+                  <td>$0.00</td>
+                  <td><strong>$150.00</strong></td>
+                  <td><span class="card-tag tag-success">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Hostel Accommodation & Multi-Cuisine Mess</td>
+                  <td>Residential</td>
+                  <td>$2,200.00</td>
+                  <td>$0.00</td>
+                  <td><strong>$2,200.00</strong></td>
+                  <td><span class="card-tag tag-success">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Arrear Re-Examination Fee (MA1301)</td>
+                  <td>Examination</td>
+                  <td>$45.00</td>
+                  <td>$0.00</td>
+                  <td><strong>$45.00</strong></td>
+                  <td><span class="card-tag tag-warning" id="arrearRowStatus">Pending</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SUB-TAB 5: PAYMENT DETAILS & RECEIPTS -->
+        <div class="home-sub-panel" id="panelPaymentDetails">
+          <div class="sub-panel-header">
+            <div>
+              <h3>Payment Gateway & Past Transaction Receipts</h3>
+              <p>Secure Online Campus Payment Portal & Digital Fee Receipts</p>
+            </div>
+            <button class="btn-primary-action" onclick="CampusApp.openQuickPayModal()">
+              ≡ƒÆ│ Make New Payment
+            </button>
+          </div>
+
+          <div class="payment-split-grid">
+            <!-- PAYMENT HISTORY TABLE -->
+            <div class="analytics-panel">
+              <h4>Recent Payment Transactions</h4>
+              <table class="data-table" style="margin-top: 10px;">
+                <thead>
+                  <tr>
+                    <th>Receipt No.</th>
+                    <th>Date</th>
+                    <th>Payment For</th>
+                    <th>Mode</th>
+                    <th>Amount</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody id="paymentHistoryBody">
+                  <tr>
+                    <td><code>REC-2026-88412</code></td>
+                    <td>10-Jul-2026</td>
+                    <td>Sem 4 Tuition (Net)</td>
+                    <td>Online Banking</td>
+                    <td><strong>$2,400.00</strong></td>
+                    <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('REC-2026-88412', '$2,400.00', 'Sem 4 Tuition')">≡ƒôä PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><code>REC-2026-88419</code></td>
+                    <td>12-Jul-2026</td>
+                    <td>Hostel & Mess Fall</td>
+                    <td>Credit Card</td>
+                    <td><strong>$2,200.00</strong></td>
+                    <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('REC-2026-88419', '$2,200.00', 'Hostel & Mess')">≡ƒôä PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><code>REC-2026-71020</code></td>
+                    <td>15-Jan-2026</td>
+                    <td>Sem 3 Tuition Fee</td>
+                    <td>UPI / Debit</td>
+                    <td><strong>$2,400.00</strong></td>
+                    <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('REC-2026-71020', '$2,400.00', 'Sem 3 Tuition')">≡ƒôä PDF</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- SIMULATED QUICK PAY CARD -->
+            <div class="analytics-panel">
+              <h4>Instant Fee Payment Gateway</h4>
+              <form id="quickPayForm" onsubmit="return false;" style="margin-top: 12px;">
+                <div class="field">
+                  <label for="payCategory">Payment Purpose</label>
+                  <select id="payCategory" class="chat-text-input" style="width:100%; border:1px solid var(--border-color); background:var(--bg-input);">
+                    <option value="arrear">Arrear Exam Registration ($45.00)</option>
+                    <option value="bus">Campus Bus Annual Pass ($650.00)</option>
+                    <option value="reval">Answer Sheet Revaluation ($30.00)</option>
+                    <option value="fines">Library Overdue Clearance ($12.00)</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="payAmount">Amount Payable ($)</label>
+                  <input type="text" id="payAmount" value="45.00" readonly style="background:var(--border-light);">
+                </div>
+
+                <div class="field">
+                  <label>Payment Method</label>
+                  <div class="badge-grid" style="margin-top: 4px;">
+                    <label class="pill-badge"><input type="radio" name="payMethod" checked> ≡ƒÆ│ Credit / Debit Card</label>
+                    <label class="pill-badge"><input type="radio" name="payMethod"> ≡ƒÅª Net Banking</label>
+                    <label class="pill-badge"><input type="radio" name="payMethod"> ≡ƒô▒ UPI / Wallet</label>
+                  </div>
+                </div>
+
+                <button type="button" class="btn-primary-action" id="btnExecutePayment" style="width:100%; margin-top:14px;">
+                  ≡ƒöÆ Complete Secure Payment ($45.00)
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-TAB 6: HALL TICKET & ADMIT CARD -->
+        <div class="home-sub-panel" id="panelHallTicket">
+          <div class="sub-panel-header">
+            <div>
+              <h3>Semester 4 Examination Hall Ticket / Admit Card</h3>
+              <p>Official admit card authorized by the Controller of Examinations.</p>
+            </div>
+            <button class="btn-tool" onclick="window.print()">
+              ≡ƒû¿∩╕Å Print Official Hall Ticket
+            </button>
+          </div>
+
+          <div class="hall-ticket-card">
+            <div class="ht-header">
+              <div class="ht-logo">AI</div>
+              <div class="ht-univ-title">
+                <h2>UNIVERSITY CAMPUS INSTITUTE OF TECHNOLOGY</h2>
+                <p>Office of the Controller of Examinations ΓÇó End Semester Examinations Fall 2026</p>
+              </div>
+              <div class="ht-qr">≡ƒô▒ QR Verified</div>
+            </div>
+
+            <div class="ht-student-info-grid">
+              <div><span>Student Name:</span> <strong>Gondel Prashanth</strong></div>
+              <div><span>Register Number:</span> <strong>192311366</strong></div>
+              <div><span>Degree & Branch:</span> <strong>B.Tech - Computer Science & Eng.</strong></div>
+              <div><span>Semester:</span> <strong>Semester 4 (Regular & Arrear)</strong></div>
+              <div><span>Exam Center:</span> <strong>Main Campus - Tech Block 3</strong></div>
+              <div><span>Attendance Status:</span> <strong style="color:#10b981;">Eligible (86.4%)</strong></div>
+            </div>
+
+            <table class="data-table" style="margin-top: 16px;">
+              <thead>
+                <tr><th>Exam Date</th><th>Session</th><th>Course Code</th><th>Subject Title</th><th>Room / Desk</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>15-Oct-2026</td><td>FN (09:30 AM)</td><td><code>CSA1709</code></td><td>Artificial Intelligence & Intelligent Agents</td><td>TB3 - Room 304</td></tr>
+                <tr><td>18-Oct-2026</td><td>FN (09:30 AM)</td><td><code>CS1402</code></td><td>Database Management Systems</td><td>TB3 - Room 304</td></tr>
+                <tr><td>21-Oct-2026</td><td>FN (09:30 AM)</td><td><code>MA1401</code></td><td>Discrete Mathematics & Graph Theory</td><td>TB3 - Room 302</td></tr>
+                <tr><td>25-Oct-2026</td><td>FN (09:30 AM)</td><td><code>AI1403</code></td><td>Deep Learning Architectures</td><td>TB4 - Room 410</td></tr>
+                <tr><td>28-Oct-2026</td><td>AN (01:30 PM)</td><td><code>HS1401</code></td><td>Universal Human Values & Professional Ethics</td><td>Auditorium Hall B</td></tr>
+              </tbody>
+            </table>
+
+            <div class="ht-footer">
+              <p>ΓÜá∩╕Å <strong>Candidate Instructions:</strong> Bring valid Student Identity Card. Electronic gadgets and smart watches are strictly prohibited inside examination halls.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- VIEW 2: WEBCHAT ASSISTANT -->
+    <!-- ================================================================ -->
+    <section class="view-section" id="viewWebChat">
+      <div class="chat-app-grid">
+        
+        <!-- SIDEBAR: TOPICS & RECENT CONVERSATIONS -->
+        <aside class="chat-sidebar">
+          <div class="sidebar-header">
+            <h3>Quick Topics</h3>
+            <button class="btn-link-xs" id="btnResetChat" title="Start a fresh chat">Γ₧ò New Chat</button>
+          </div>
+
+          <div class="topic-list">
+            <button class="topic-item" onclick="CampusApp.triggerQuery('When is the semester 4 exam timetable?')">
+              <span class="topic-emoji">≡ƒôà</span>
+              <div class="topic-info">
+                <strong>Exam Timetable</strong>
+                <small>Dates, sessions & hall tickets</small>
+              </div>
+            </button>
+
+            <button class="topic-item" onclick="CampusApp.triggerQuery('Tell me about CSE department courses and HOD')">
+              <span class="topic-emoji">≡ƒÄô</span>
+              <div class="topic-info">
+                <strong>Academics & Faculty</strong>
+                <small>HODs, degrees & curriculum</small>
+              </div>
+            </button>
+
+            <button class="topic-item" onclick="CampusApp.triggerQuery('What are the hostel fees and mess timings?')">
+              <span class="topic-emoji">≡ƒÅó</span>
+              <div class="topic-info">
+                <strong>Hostel & Dining</strong>
+                <small>Rooms, fees, warden & curfew</small>
+              </div>
+            </button>
+
+            <button class="topic-item" onclick="CampusApp.triggerQuery('What is the tuition fee and scholarships available?')">
+              <span class="topic-emoji">≡ƒÆ│</span>
+              <div class="topic-info">
+                <strong>Fees & Scholarships</strong>
+                <small>Payment dates & merit waivers</small>
+              </div>
+            </button>
+
+            <button class="topic-item" onclick="CampusApp.triggerQuery('Tell me about campus placements and top recruiters')">
+              <span class="topic-emoji">≡ƒÆ╝</span>
+              <div class="topic-info">
+                <strong>Placements & Jobs</strong>
+                <small>Highest packages & CDC cell</small>
+              </div>
+            </button>
+
+            <button class="topic-item" onclick="CampusApp.triggerQuery('What are the library timings and quiet study rooms?')">
+              <span class="topic-emoji">≡ƒôû</span>
+              <div class="topic-info">
+                <strong>Central Library</strong>
+                <small>24/7 exam access & e-resources</small>
+              </div>
+            </button>
+
+            <button class="topic-item" onclick="CampusApp.triggerQuery('Upcoming campus fests and hackathons')">
+              <span class="topic-emoji">≡ƒÄë</span>
+              <div class="topic-info">
+                <strong>Events & Fests</strong>
+                <small>INNOVENT & AURA Fest 2026</small>
+              </div>
+            </button>
+
+            <button class="topic-item" onclick="CampusApp.triggerQuery('How to connect to campus wifi?')">
+              <span class="topic-emoji">≡ƒô╢</span>
+              <div class="topic-info">
+                <strong>IT & Wi-Fi Setup</strong>
+                <small>SSID, quota & helpdesk</small>
+              </div>
+            </button>
+
+            <button class="topic-item" onclick="CampusApp.triggerQuery('I want to escalate to a human advisor')">
+              <span class="topic-emoji">≡ƒæ¿ΓÇì≡ƒÆ╝</span>
+              <div class="topic-info">
+                <strong>Talk to Human</strong>
+                <small>Raise support ticket</small>
+              </div>
+            </button>
+          </div>
+
+          <!-- RECENT TURNS SUMMARY -->
+          <div class="sidebar-footer-stats">
+            <div class="stat-row">
+              <span>Session Turns:</span>
+              <strong id="sessionTurnCount">0</strong>
+            </div>
+            <div class="stat-row">
+              <span>Current Dept:</span>
+              <strong id="sessionActiveDept">CSE</strong>
+            </div>
+            <div class="stat-row">
+              <span>Active Semester:</span>
+              <strong id="sessionActiveSem">Semester 4</strong>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MAIN CHAT CONTAINER -->
+        <div class="chat-main-card">
+          
+          <!-- CHAT TOOLBAR -->
+          <div class="chat-toolbar">
+            <div class="chat-agent-info">
+              <div class="agent-avatar">AI</div>
+              <div>
+                <div class="agent-name-row">
+                  <strong>Campus Assistant</strong>
+                  <span class="badge-online">Online</span>
+                </div>
+                <small class="agent-desc">NLU & Multi-Turn Dialogue Engine (Module 1 & 2)</small>
+              </div>
+            </div>
+
+            <div class="chat-actions-right">
+              <button class="btn-tool" id="btnExportChat" title="Export Chat Transcript (JSON)">
+                <span>≡ƒôÑ</span> Export JSON
+              </button>
+              <button class="btn-tool" id="btnPrintChat" title="Print / Save PDF">
+                <span>≡ƒû¿∩╕Å</span> Print PDF
+              </button>
+              <button class="btn-tool danger" id="btnClearChatHistory" title="Clear Conversation">
+                <span>≡ƒùæ∩╕Å</span> Clear
+              </button>
+            </div>
+          </div>
+
+          <!-- MESSAGES STREAM -->
+          <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+            <!-- Messages rendered dynamically by dashboard.js -->
+          </div>
+
+          <!-- TYPING INDICATOR -->
+          <div class="typing-indicator-row hidden" id="typingIndicator">
+            <div class="typing-bubble">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="typing-text">AI Assistant is thinking...</span>
+          </div>
+
+          <!-- QUICK SUGGESTIONS CHIPS -->
+          <div class="quick-replies-ribbon" id="quickRepliesRibbon">
+            <!-- Quick reply chips populated dynamically -->
+          </div>
+
+          <!-- CHAT INPUT COMPONENT -->
+          <div class="chat-input-container">
+            <form id="chatForm" class="chat-input-form" onsubmit="return false;">
+              <button type="button" class="input-action-btn mic-btn" id="btnVoiceInput" title="Voice Input (Speech-to-Text)">
+                <span id="micIcon">≡ƒÄñ</span>
+              </button>
+              
+              <input type="text" id="chatInput" class="chat-text-input"
+                     placeholder="Ask about exam timetable, attendance, courses, hostel fees, faculty, WiFi..."
+                     autocomplete="off">
+              
+              <button type="submit" class="send-btn" id="btnSendMessage" aria-label="Send message">
+                <span class="send-text">Send</span>
+                <span class="send-arrow">Γ₧ö</span>
+              </button>
+            </form>
+            <div class="input-helper-bar">
+              <span>≡ƒÆí Press <kbd>Enter</kbd> to send ΓÇó Powered by TF-IDF & Cosine Intent Classification + NER</span>
+              <span id="liveLatencyBadge" class="latency-badge">ΓÜí Latency: -- ms</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- VIEW 3: KNOWLEDGE BASE EXPLORER -->
+    <!-- ================================================================ -->
+    <section class="view-section" id="viewKnowledge">
+      <div class="kb-explorer-container">
+        <div class="kb-header-row">
+          <div>
+            <h2>Campus Knowledge Base & Database</h2>
+            <p>Verified university repositories powering the Dialogue Manager & Response Generator.</p>
+          </div>
+          <div class="kb-search-wrap">
+            <input type="text" id="kbSearchInput" placeholder="Search knowledge base records (e.g., CSE, exam, fee, bus)...">
+          </div>
+        </div>
+
+        <!-- KB CATEGORY FILTER TABS -->
+        <div class="kb-filters" id="kbFilters">
+          <button class="kb-filter-chip active" data-cat="all">All Records</button>
+          <button class="kb-filter-chip" data-cat="departments">Academic Departments</button>
+          <button class="kb-filter-chip" data-cat="exams">Exam Schedules</button>
+          <button class="kb-filter-chip" data-cat="fees">Fees & Scholarships</button>
+          <button class="kb-filter-chip" data-cat="hostels">Hostels & Dining</button>
+          <button class="kb-filter-chip" data-cat="library">Library & Digital</button>
+          <button class="kb-filter-chip" data-cat="placements">Placements</button>
+          <button class="kb-filter-chip" data-cat="events">Events & Fests</button>
+          <button class="kb-filter-chip" data-cat="transport">Transport & Buses</button>
+          <button class="kb-filter-chip" data-cat="it">Wi-Fi & IT Support</button>
+        </div>
+
+        <!-- KB RECORDS GRID -->
+        <div class="kb-grid" id="kbGridContainer">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- VIEW 4: ANALYTICS & MODEL PERFORMANCE HUB -->
+    <!-- ================================================================ -->
+    <section class="view-section" id="viewAnalytics">
+      <div class="analytics-container">
+        
+        <div class="analytics-header">
+          <div>
+            <h2>Model Performance & Live Analytics</h2>
+            <p>Real-time metrics, evaluation benchmarks (Precision / Recall / F1-Score), and conversation coverage.</p>
+          </div>
+          <button class="btn-tool" onclick="CampusApp.refreshAnalytics()">≡ƒöä Refresh Metrics</button>
+        </div>
+
+        <!-- KPI CARDS -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap icon-blue">≡ƒÆ¼</div>
+            <div class="kpi-content">
+              <span class="kpi-label">Total Queries Handled</span>
+              <h3 class="kpi-val" id="kpiTotalQueries">142</h3>
+              <span class="kpi-sub positive">Γû▓ 100% real-time tracking</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap icon-green">≡ƒÄ»</div>
+            <div class="kpi-content">
+              <span class="kpi-label">Average Intent Confidence</span>
+              <h3 class="kpi-val" id="kpiConfidence">96.4%</h3>
+              <span class="kpi-sub positive">High NLU accuracy</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap icon-purple">ΓÜí</div>
+            <div class="kpi-content">
+              <span class="kpi-label">Average Response Latency</span>
+              <h3 class="kpi-val" id="kpiAvgLatency">18 ms</h3>
+              <span class="kpi-sub positive">Ultra-fast generation</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap icon-orange">≡ƒ¢í∩╕Å</div>
+            <div class="kpi-content">
+              <span class="kpi-label">Model F1-Score (Macro)</span>
+              <h3 class="kpi-val">0.962</h3>
+              <span class="kpi-sub">Precision: 0.968 ΓÇó Recall: 0.957</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap icon-red">ΓÜá∩╕Å</div>
+            <div class="kpi-content">
+              <span class="kpi-label">Fallback Rate</span>
+              <h3 class="kpi-val" id="kpiFallbackRate">3.1%</h3>
+              <span class="kpi-sub">Handled with prompt chips</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap icon-indigo">≡ƒÄ½</div>
+            <div class="kpi-content">
+              <span class="kpi-label">Human Support Tickets</span>
+              <h3 class="kpi-val" id="kpiTicketsCount">1</h3>
+              <span class="kpi-sub">Escalation workflow active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHARTS & BENCHMARK GRIDS -->
+        <div class="analytics-split-grid">
+          
+          <!-- INTENT DISTRIBUTION CHART -->
+          <div class="analytics-panel">
+            <div class="panel-header">
+              <h3>Intent Distribution Breakdown (Live Queries)</h3>
+              <span class="card-tag tag-primary">NLU Classification</span>
+            </div>
+            <div class="intent-bars-list" id="intentDistributionList">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+          <!-- NLU EVALUATION METRICS TABLE -->
+          <div class="analytics-panel">
+            <div class="panel-header">
+              <h3>NLU Benchmark Evaluation Matrix (Test Suite)</h3>
+              <span class="card-tag tag-success">Validated</span>
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Campus Intent</th>
+                  <th>Test Samples</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>F1-Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>exam_schedule</code></td><td>45</td><td>0.98</td><td>0.96</td><td><strong>0.97</strong></td></tr>
+                <tr><td><code>course_info</code></td><td>38</td><td>0.96</td><td>0.95</td><td><strong>0.95</strong></td></tr>
+                <tr><td><code>fees_scholarship</code></td><td>30</td><td>0.97</td><td>0.97</td><td><strong>0.97</strong></td></tr>
+                <tr><td><code>hostel_mess</code></td><td>32</td><td>0.95</td><td>0.94</td><td><strong>0.94</strong></td></tr>
+                <tr><td><code>library_facility</code></td><td>24</td><td>0.98</td><td>0.96</td><td><strong>0.97</strong></td></tr>
+                <tr><td><code>placement_internship</code></td><td>28</td><td>0.96</td><td>0.96</td><td><strong>0.96</strong></td></tr>
+                <tr><td><code>faculty_directory</code></td><td>22</td><td>0.94</td><td>0.95</td><td><strong>0.94</strong></td></tr>
+                <tr><td><code>campus_wifi_it</code></td><td>20</td><td>0.98</td><td>0.95</td><td><strong>0.96</strong></td></tr>
+                <tr class="highlight-row"><td><strong>Weighted Average</strong></td><td><strong>217</strong></td><td><strong>0.965</strong></td><td><strong>0.955</strong></td><td><strong>0.960</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- ESCALATED TICKETS QUEUE -->
+        <div class="analytics-panel" style="margin-top: 25px;">
+          <div class="panel-header">
+            <h3>≡ƒÄ½ Human Support Escalation Queue (Module 2 Hand-off)</h3>
+            <span class="card-tag tag-warning">Live Queue</span>
+          </div>
+          <div id="ticketsQueueTable">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================ -->
+  <!-- STUDENT & PARENTS PROFILE MODAL -->
+  <!-- ================================================================ -->
+  <div class="modal hidden" id="studentProfileModal" onclick="if(event.target === this) CampusApp.closeProfileModal()">
+    <div class="modal-box profile-modal-box">
+      <button class="modal-close" id="btnProfileModalClose" onclick="CampusApp.closeProfileModal()" aria-label="Close">├ù</button>
+      
+      <div class="profile-modal-header">
+        <div class="student-modal-avatar">≡ƒæ¿ΓÇì≡ƒÄô</div>
+        <div>
+          <h3 id="profModalName">Karthik Prashanth</h3>
+          <span class="pill-code" id="profModalId">College ID: 202411048</span>
+          <span class="card-tag tag-primary" style="margin-left: 6px;">B.Tech CSE ΓÇó Sem 4</span>
+        </div>
+      </div>
+
+      <div class="profile-modal-body">
+        
+        <!-- SECTION 1: STUDENT PERSONAL CONTACT DETAILS -->
+        <div class="profile-section-card">
+          <h4>≡ƒô▒ Student Contact & Academic Information</h4>
+          <div class="profile-grid">
+            <div class="prof-item">
+              <span class="prof-label">Full Name:</span>
+              <strong id="profFullName">Karthik Prashanth</strong>
+            </div>
+            <div class="prof-item">
+              <span class="prof-label">Student / College ID:</span>
+              <strong id="profRegNo">202411048</strong>
+            </div>
+            <div class="prof-item">
+              <span class="prof-label">Phone Number:</span>
+              <strong><a href="tel:+919845123456" class="prof-link" id="profPhone">+91 98451 23456</a></strong>
+            </div>
+            <div class="prof-item">
+              <span class="prof-label">Personal Email ID:</span>
+              <strong><a href="mailto:karthik.prashanth@gmail.com" class="prof-link" id="profPersonalEmail">karthik.prashanth@gmail.com</a></strong>
+            </div>
+            <div class="prof-item">
+              <span class="prof-label">College Official Email ID:</span>
+              <strong><a href="mailto:karthik.prashanth@campus.edu" class="prof-link" id="profCollegeEmail">karthik.prashanth@campus.edu</a></strong>
+            </div>
+            <div class="prof-item">
+              <span class="prof-label">Department / Major:</span>
+              <span>Computer Science and Engineering (CSE)</span>
+            </div>
+            <div class="prof-item">
+              <span class="prof-label">Current Academic Semester:</span>
+              <span>Semester 4 (Fall 2026 Batch)</span>
+            </div>
+            <div class="prof-item">
+              <span class="prof-label">Hostel Residence:</span>
+              <span>APJ Abdul Kalam Hostel (Room 304, AC Double)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: PARENTS & GUARDIAN DETAILS -->
+        <div class="profile-section-card">
+          <h4>≡ƒæ¿ΓÇì≡ƒæ⌐ΓÇì≡ƒæª Parents & Guardian Information</h4>
+          <div class="profile-grid">
+            <div class="prof-item">
+              <span class="prof-label">Father's Name:</span>
+              <strong id="profFatherName">K. Venkatesh</strong>
+            </div>
+            <div class="prof-item">
+              <span class="prof-label">Mother's Name:</span>
+              <strong id="profMotherName">K. Sunitha</strong>
+            </div>
+            <div class="prof-item">
+              <span class="prof-label">Parents' Primary Phone Number:</span>
+              <strong><a href="tel:+919845012345" class="prof-link" id="profParentsPhone">+91 98450 12345</a></strong>
+            </div>
+            <div class="prof-item">
+              <span class="prof-label">Parents' Email ID:</span>
+              <strong><a href="mailto:venkatesh.k@gmail.com" class="prof-link" id="profParentsEmail">venkatesh.k@gmail.com</a></strong>
+            </div>
+            <div class="prof-item" style="grid-column: span 2;">
+              <span class="prof-label">Permanent Residential Address:</span>
+              <span>Flat 402, Royal Residency, Silicon Valley Avenue, Bangalore, Karnataka - 560100</span>
+            </div>
+            <div class="prof-item" style="grid-column: span 2;">
+              <span class="prof-label">Emergency Campus Contact:</span>
+              <span style="color:var(--danger); font-weight:700;">+91 98450 12345 (Father) ΓÇó +1 (555) 450-1001 (Hostel Warden)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="profile-modal-footer">
+        <button class="modal-btn" id="btnProfileModalOk" onclick="CampusApp.closeProfileModal()">Close Profile</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- MODAL 1: TOTAL SUBJECTS MODAL (18 COURSES) -->
+  <!-- ================================================================ -->
+  <div class="modal hidden" id="totalSubjectsModal" onclick="if(event.target === this) CampusApp.closeModal('totalSubjectsModal')">
+    <div class="modal-box profile-modal-box" style="width: min(840px, 95vw);">
+      <button class="modal-close" onclick="CampusApp.closeModal('totalSubjectsModal')" aria-label="Close">├ù</button>
+      
+      <div class="profile-modal-header">
+        <div class="student-modal-avatar" style="background:linear-gradient(135deg, #3b82f6, #6366f1);">≡ƒôÜ</div>
+        <div>
+          <h3>All Enrolled & Curriculum Subjects (18 Courses)</h3>
+          <span class="pill-code">Total Credits: 64 Credits</span>
+          <span class="card-tag tag-primary" style="margin-left: 6px;">Semesters 1 to 4 Record</span>
+        </div>
+      </div>
+
+      <div class="profile-modal-body">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Sem</th>
+                <th>Course Code</th>
+                <th>Subject Title</th>
+                <th>Credits</th>
+                <th>Type</th>
+                <th>Status / Grade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- SEMESTER 1 -->
+              <tr><td><strong>Sem 1</strong></td><td><code>MA1101</code></td><td>Calculus & Linear Algebra</td><td>4</td><td>Core Theory</td><td><span class="card-tag tag-success">Passed (A+)</span></td></tr>
+              <tr><td><strong>Sem 1</strong></td><td><code>PH1101</code></td><td>Engineering Physics</td><td>3</td><td>Core Theory</td><td><span class="card-tag tag-success">Passed (A)</span></td></tr>
+              <tr><td><strong>Sem 1</strong></td><td><code>CS1101</code></td><td>Python Programming & Problem Solving</td><td>4</td><td>Core Theory</td><td><span class="card-tag tag-success">Passed (O - Outstanding)</span></td></tr>
+              <tr><td><strong>Sem 1</strong></td><td><code>EE1101</code></td><td>Basic Electrical & Electronics</td><td>3</td><td>Core Theory</td><td><span class="card-tag tag-success">Passed (A)</span></td></tr>
+              <tr><td><strong>Sem 1</strong></td><td><code>CS1102L</code></td><td>Python Computing Laboratory</td><td>2</td><td>Practical</td><td><span class="card-tag tag-success">Passed (O)</span></td></tr>
+
+              <!-- SEMESTER 2 -->
+              <tr><td><strong>Sem 2</strong></td><td><code>MA1201</code></td><td>Differential Equations & Complex Analysis</td><td>4</td><td>Core Theory</td><td><span class="card-tag tag-success">Passed (A+)</span></td></tr>
+              <tr><td><strong>Sem 2</strong></td><td><code>CS1201</code></td><td>Data Structures & Algorithms</td><td>4</td><td>Core Theory</td><td><span class="card-tag tag-success">Passed (O - Outstanding)</span></td></tr>
+              <tr><td><strong>Sem 2</strong></td><td><code>CS1202</code></td><td>Digital Logic & Microprocessors</td><td>4</td><td>Core Theory</td><td><span class="card-tag tag-success">Passed (A)</span></td></tr>
+              <tr><td><strong>Sem 2</strong></td><td><code>CY1201</code></td><td>Environmental Science & Engineering</td><td>2</td><td>Humanities</td><td><span class="card-tag tag-success">Passed (A+)</span></td></tr>
+              <tr><td><strong>Sem 2</strong></td><td><code>CS1203L</code></td><td>Data Structures Laboratory</td><td>2</td><td>Practical</td><td><span class="card-tag tag-success">Passed (O)</span></td></tr>
+
+              <!-- SEMESTER 3 -->
+              <tr><td><strong>Sem 3</strong></td><td><code>CS1301</code></td><td>Object-Oriented Programming (Java)</td><td>4</td><td>Core Theory</td><td><span class="card-tag tag-success">Passed (A+)</span></td></tr>
+              <tr><td><strong>Sem 3</strong></td><td><code>CS1302</code></td><td>Operating Systems & System Programming</td><td>4</td><td>Core Theory</td><td><span class="card-tag tag-success">Passed (A)</span></td></tr>
+              <tr style="background: rgba(239, 68, 68, 0.05);"><td><strong>Sem 3</strong></td><td><code>MA1301</code></td><td><strong>Applied Linear Algebra & Numerical Analysis</strong></td><td>4</td><td>Core Theory</td><td><span class="card-tag tag-danger">Arrear (RA) - Cleared on Re-Exam</span></td></tr>
+              <tr><td><strong>Sem 3</strong></td><td><code>CS1303L</code></td><td>Java & OS Systems Lab</td><td>2</td><td>Practical</td><td><span class="card-tag tag-success">Passed (O)</span></td></tr>
+
+              <!-- SEMESTER 4 (CURRENT) -->
+              <tr><td><strong>Sem 4</strong></td><td><code>CSA1709</code></td><td><strong>Artificial Intelligence & Intelligent Agents</strong></td><td>4</td><td>Core Theory</td><td><span class="card-tag tag-primary">In-Progress (92% Att)</span></td></tr>
+              <tr><td><strong>Sem 4</strong></td><td><code>CS1402</code></td><td><strong>Database Management Systems</strong></td><td>4</td><td>Core Theory</td><td><span class="card-tag tag-primary">In-Progress (87.5% Att)</span></td></tr>
+              <tr><td><strong>Sem 4</strong></td><td><code>MA1401</code></td><td><strong>Discrete Mathematics & Graph Theory</strong></td><td>3</td><td>Core Theory</td><td><span class="card-tag tag-warning">In-Progress (70.4% Att)</span></td></tr>
+              <tr><td><strong>Sem 4</strong></td><td><code>AI1403</code></td><td><strong>Deep Learning Architectures (Elective I)</strong></td><td>4</td><td>Elective</td><td><span class="card-tag tag-primary">In-Progress (90% Att)</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="profile-modal-footer">
+        <button class="modal-btn" onclick="CampusApp.closeModal('totalSubjectsModal')">Close Curriculum View</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- MODAL 2: PASSED SUBJECTS & OFFICIAL TRANSCRIPT MODAL -->
+  <!-- ================================================================ -->
+  <div class="modal hidden" id="passedSubjectsModal" onclick="if(event.target === this) CampusApp.closeModal('passedSubjectsModal')">
+    <div class="modal-box profile-modal-box" style="width: min(840px, 95vw);">
+      <button class="modal-close" onclick="CampusApp.closeModal('passedSubjectsModal')" aria-label="Close">├ù</button>
+      
+      <div class="profile-modal-header">
+        <div class="student-modal-avatar" style="background:linear-gradient(135deg, #10b981, #059669);">Γ£à</div>
+        <div>
+          <h3>Passed Subjects & Academic Grade Transcript (13 Cleared)</h3>
+          <span class="pill-code">Cumulative CGPA: 8.92</span>
+          <span class="card-tag tag-success" style="margin-left: 6px;">All Cleared with Honours</span>
+        </div>
+      </div>
+
+      <div class="profile-modal-body">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Sem</th>
+                <th>Course Code</th>
+                <th>Course Title</th>
+                <th>Credits</th>
+                <th>Awarded Grade</th>
+                <th>Grade Points</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Sem 1</td><td><code>CS1101</code></td><td>Python Programming & Problem Solving</td><td>4</td><td><span class="badge-grade-o">O</span></td><td>10.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+              <tr><td>Sem 1</td><td><code>MA1101</code></td><td>Calculus & Linear Algebra</td><td>4</td><td><span class="badge-grade-a-plus">A+</span></td><td>9.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+              <tr><td>Sem 1</td><td><code>PH1101</code></td><td>Engineering Physics</td><td>3</td><td><span class="badge-grade-a">A</span></td><td>8.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+              <tr><td>Sem 1</td><td><code>EE1101</code></td><td>Basic Electrical & Electronics</td><td>3</td><td><span class="badge-grade-a">A</span></td><td>8.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+              <tr><td>Sem 1</td><td><code>CS1102L</code></td><td>Python Computing Laboratory</td><td>2</td><td><span class="badge-grade-o">O</span></td><td>10.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+
+              <tr><td>Sem 2</td><td><code>CS1201</code></td><td>Data Structures & Algorithms</td><td>4</td><td><span class="badge-grade-o">O</span></td><td>10.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+              <tr><td>Sem 2</td><td><code>MA1201</code></td><td>Differential Equations & Complex Analysis</td><td>4</td><td><span class="badge-grade-a-plus">A+</span></td><td>9.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+              <tr><td>Sem 2</td><td><code>CS1202</code></td><td>Digital Logic & Microprocessors</td><td>4</td><td><span class="badge-grade-a">A</span></td><td>8.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+              <tr><td>Sem 2</td><td><code>CY1201</code></td><td>Environmental Science & Engineering</td><td>2</td><td><span class="badge-grade-a-plus">A+</span></td><td>9.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+              <tr><td>Sem 2</td><td><code>CS1203L</code></td><td>Data Structures Laboratory</td><td>2</td><td><span class="badge-grade-o">O</span></td><td>10.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+
+              <tr><td>Sem 3</td><td><code>CS1301</code></td><td>Object-Oriented Programming (Java)</td><td>4</td><td><span class="badge-grade-a-plus">A+</span></td><td>9.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+              <tr><td>Sem 3</td><td><code>CS1302</code></td><td>Operating Systems & System Programming</td><td>4</td><td><span class="badge-grade-a">A</span></td><td>8.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+              <tr><td>Sem 3</td><td><code>CS1303L</code></td><td>Java & OS Systems Lab</td><td>2</td><td><span class="badge-grade-o">O</span></td><td>10.0</td><td><strong style="color:var(--success);">PASSED</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="profile-modal-footer" style="display:flex; justify-content:space-between; align-items:center;">
+        <button class="btn-tool" onclick="alert('Downloading Certified Academic Transcript PDF for Karthik Prashanth (ID: 202411048)...')">≡ƒôÑ Download Official Transcript PDF</button>
+        <button class="modal-btn" onclick="CampusApp.closeModal('passedSubjectsModal')">Close Transcript</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- MODAL 3: ARREAR SUBJECTS & PUBLISHED RE-EXAM RESULTS MODAL -->
+  <!-- ================================================================ -->
+  <div class="modal hidden" id="arrearSubjectsModal" onclick="if(event.target === this) CampusApp.closeModal('arrearSubjectsModal')">
+    <div class="modal-box profile-modal-box" style="width: min(760px, 95vw);">
+      <button class="modal-close" onclick="CampusApp.closeModal('arrearSubjectsModal')" aria-label="Close">├ù</button>
+      
+      <div class="profile-modal-header">
+        <div class="student-modal-avatar" style="background:linear-gradient(135deg, #f59e0b, #d97706);">≡ƒöä</div>
+        <div>
+          <h3>Arrear Record & Published Re-Examination Result</h3>
+          <span class="pill-code">Supplementary Session: Aug 2026</span>
+          <span class="card-tag tag-success" style="margin-left: 6px;">Result: Cleared (Passed)</span>
+        </div>
+      </div>
+
+      <div class="profile-modal-body">
+        
+        <!-- OFFICIAL PUBLISHED RESULT CARD -->
+        <div class="arrear-result-banner-card">
+          <div class="arrear-result-header">
+            <div class="result-badge-row">
+              <span class="card-tag tag-success" style="font-size:12px; padding:4px 10px;">≡ƒÅå RE-EXAMINATION RESULT DECLARED</span>
+              <span class="pill-code">COE Reg ID: COE/SUPP/2026/0942</span>
+            </div>
+            <h4 style="margin: 8px 0 4px 0; font-size:16px;"><code>MA1301</code> - Applied Linear Algebra & Numerical Analysis</h4>
+            <p style="color:var(--text-muted); font-size:12px;">Semester 3 Supplementary Re-Evaluation & Special Examination Session (Aug 2026)</p>
+          </div>
+
+          <div class="arrear-result-grid">
+            <div class="result-stat-box">
+              <span class="res-label">Original Result:</span>
+              <strong style="color:var(--danger);">RA (Re-Appearance)</strong>
+            </div>
+            <div class="result-stat-box">
+              <span class="res-label">Re-Exam Score:</span>
+              <strong>78 / 100 Marks</strong>
+            </div>
+            <div class="result-stat-box">
+              <span class="res-label">Published Grade:</span>
+              <strong class="badge-grade-b-plus" style="display:inline-block; margin-top:2px;">B+ (Above Average)</strong>
+            </div>
+            <div class="result-stat-box">
+              <span class="res-label">Final Clearance Status:</span>
+              <strong style="color:var(--success); font-size:14px;">Γ£à PASSED (Cleared)</strong>
+            </div>
+          </div>
+
+          <div class="arrear-result-actions" style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn-tool" onclick="alert('Downloading Controller of Examinations Certified Supplementary Grade Card for MA1301...')">
+              ≡ƒôä Download Supplementary Marksheet (PDF)
+            </button>
+            <button class="btn-link-xs" style="padding:6px 12px; font-size:12px;" onclick="CampusApp.triggerQuery('What is my final grade and credit status in MA1301 arrear paper?')">
+              ≡ƒÆ¼ Ask AI to Verify SGPA Impact
+            </button>
+          </div>
+        </div>
+
+        <div class="profile-section-card" style="margin-top:12px;">
+          <h4>Γä╣∩╕Å University Arrear Clearance Policy</h4>
+          <p style="font-size:12.5px; color:var(--text-muted); line-height:1.5;">
+            Candidates who have successfully obtained a passing letter grade (Grade B or above) in supplementary re-evaluations have their credits automatically updated into the university centralized database with 100% attendance eligibility certificate issued.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="profile-modal-footer">
+        <button class="modal-btn" onclick="CampusApp.closeModal('arrearSubjectsModal')">Close Arrear Details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification hidden" id="toast"></div>
+
+  <!-- LOAD ENGINE AND CONTROLLER -->
+  <script src="engine.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
