@@ -1,4 +1,4 @@
-﻿/**
+/**
  * AI Campus Assistant - Authentication & Portal Login
  */
 
@@ -18,7 +18,7 @@
   const btnPresetAdmin = document.getElementById("btnPresetAdmin");
 
   const DEMO_USERS = [
-    { id: "student@campus.edu", pass: "Student@123", name: "Karthik Prashanth", role: "B.Tech CSE ΓÇó Sem 4" },
+    { id: "student@campus.edu", pass: "Student@123", name: "Karthik Prashanth", role: "B.Tech CSE • Sem 4" },
     { id: "202411048", pass: "Student@123", name: "Karthik Prashanth", role: "B.Tech CSE (202411048)" },
     { id: "admin@campus.edu", pass: "Admin@123", name: "Campus Evaluator", role: "Faculty / Capstone Reviewer" }
   ];

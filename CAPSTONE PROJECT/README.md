@@ -1,14 +1,14 @@
-﻿# AI Chatbot for Student Query Assistance and Campus Information
+# AI Chatbot for Student Query Assistance and Campus Information
 **Course:** CSA1709 Artificial Intelligence (Capstone Project)
 
 ---
 
-## ≡ƒôû Project Overview
+## 📖 Project Overview
 The **AI Campus Assistant** is an intelligent, responsive, multi-channel conversational system engineered to assist university students with instant, verified information on examinations, academic curriculum, fee payments, hostel & dining facilities, library resources, placements, and campus transit.
 
 ---
 
-## ≡ƒÅ¢∩╕Å System Architecture: Three Core Modules
+## 🏛️ System Architecture: Three Core Modules
 
 ### 1. Module 1: Natural Language Understanding (NLU) & Intent Recognition
 - **NLP Preprocessing Pipeline:** Case normalization, tokenization, stop-words removal, domain lemmatization, and Levenshtein typo correction.
@@ -31,7 +31,7 @@ The **AI Campus Assistant** is an intelligent, responsive, multi-channel convers
 
 ---
 
-## ≡ƒÜÇ How to Run the Project
+## 🚀 How to Run the Project
 
 ### Option A: Direct Browser Execution (Zero Setup)
 Simply open `index.html` or `dashboard.html` in any modern web browser:
@@ -55,7 +55,7 @@ python app.py
 
 ---
 
-## ≡ƒöæ Demo Login Credentials
+## 🔑 Demo Login Credentials
 - **Student Account:** `student@campus.edu` / `Student@123`
 - **Student ID:** `192311366` / `Student@123`
 - **Evaluator Access:** `admin@campus.edu` / `Admin@123`

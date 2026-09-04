@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -27,19 +27,19 @@
     <!-- MAIN VIEW TABS -->
     <nav class="view-tabs" role="tablist" aria-label="Main Navigation">
       <button class="tab-btn active" id="tabHome" data-view="home">
-        <span class="tab-icon">≡ƒÅá</span>
+        <span class="tab-icon">🏠</span>
         <span>Home Portal</span>
       </button>
       <button class="tab-btn" id="tabWebChat" data-view="webchat">
-        <span class="tab-icon">≡ƒÆ¼</span>
+        <span class="tab-icon">💬</span>
         <span>AI WebChat</span>
       </button>
       <button class="tab-btn" id="tabKnowledge" data-view="knowledge">
-        <span class="tab-icon">≡ƒôÜ</span>
+        <span class="tab-icon">📚</span>
         <span>Knowledge Base</span>
       </button>
       <button class="tab-btn" id="tabAnalytics" data-view="analytics">
-        <span class="tab-icon">≡ƒôè</span>
+        <span class="tab-icon">📊</span>
         <span>Analytics & NLU Hub</span>
       </button>
     </nav>
@@ -47,18 +47,18 @@
     <!-- HEADER ACTIONS -->
     <div class="header-actions">
       <button class="icon-btn" id="btnThemeToggle" title="Toggle Dark/Light Mode">
-        <span id="themeIcon">≡ƒîÖ</span>
+        <span id="themeIcon">🌙</span>
       </button>
 
       <button class="icon-btn" id="btnSoundToggle" title="Toggle Sound Feedback">
-        <span id="soundIcon">≡ƒöö</span>
+        <span id="soundIcon">🔔</span>
       </button>
 
       <div class="user-profile-badge" id="headerUserProfileBadge" title="Click to view Student & Parents Profile details" style="cursor:pointer;">
         <div class="avatar-sm" id="userAvatarInitials">ST</div>
         <div class="user-info-text">
           <span class="user-name" id="userNameLabel">Student User</span>
-          <span class="user-role" id="userRoleLabel">B.Tech CSE ΓÇó Sem 4 Γû╛</span>
+          <span class="user-role" id="userRoleLabel">B.Tech CSE • Sem 4 ▾</span>
         </div>
         <button class="logout-link" id="btnLogout" title="Sign out">Log out</button>
       </div>
@@ -77,16 +77,16 @@
         <!-- STUDENT PROFILE HERO BANNER -->
         <div class="student-hero-card">
           <div class="student-hero-left">
-            <div class="student-avatar-lg" onclick="CampusApp.openProfileModal()" title="Click to view Profile" style="cursor:pointer;">≡ƒæ¿ΓÇì≡ƒÄô</div>
+            <div class="student-avatar-lg" onclick="CampusApp.openProfileModal()" title="Click to view Profile" style="cursor:pointer;">👨‍🎓</div>
             <div class="student-details">
               <div class="hero-tag-row">
                 <span class="badge-student-status">Active Student</span>
                 <span class="badge-reg-no">ID: 202411048</span>
-                <button type="button" class="pill-code btn-profile-trigger" id="btnViewProfileHero" onclick="CampusApp.openProfileModal()" title="View full Student & Parent Profile" style="background:var(--primary-light); color:var(--primary); border:0; cursor:pointer;">≡ƒæñ View Profile</button>
+                <button type="button" class="pill-code btn-profile-trigger" id="btnViewProfileHero" onclick="CampusApp.openProfileModal()" title="View full Student & Parent Profile" style="background:var(--primary-light); color:var(--primary); border:0; cursor:pointer;">👤 View Profile</button>
               </div>
-              <h2 id="homeGreetingName">Welcome back, Karthik Prashanth ≡ƒæï</h2>
+              <h2 id="homeGreetingName">Welcome back, Karthik Prashanth 👋</h2>
               <p class="student-meta-sub">
-                <strong>Program:</strong> B.Tech in Computer Science and Engineering (CSE) ΓÇó <strong>Semester:</strong> 4 (Fall 2026)
+                <strong>Program:</strong> B.Tech in Computer Science and Engineering (CSE) • <strong>Semester:</strong> 4 (Fall 2026)
               </p>
             </div>
           </div>
@@ -98,15 +98,15 @@
             </div>
             <div class="hero-stat-box hero-stat-clickable" id="heroStatTotalSubj" onclick="CampusApp.openModal('totalSubjectsModal')" title="Click to view full curriculum popup" style="cursor:pointer;">
               <span class="stat-num color-blue" id="heroTotalSubjects">18</span>
-              <span class="stat-desc">Total Subjects Γû╛</span>
+              <span class="stat-desc">Total Subjects ▾</span>
             </div>
             <div class="hero-stat-box hero-stat-clickable" id="heroStatPassedSubj" onclick="CampusApp.openModal('passedSubjectsModal')" title="Click to view academic transcript popup" style="cursor:pointer;">
               <span class="stat-num color-green" id="heroPassedSubjects">13</span>
-              <span class="stat-desc">Passed Subjects Γû╛</span>
+              <span class="stat-desc">Passed Subjects ▾</span>
             </div>
             <div class="hero-stat-box hero-stat-clickable" id="heroStatArrearSubj" onclick="CampusApp.openModal('arrearSubjectsModal')" title="Click to view arrear & re-exam result popup" style="cursor:pointer;">
               <span class="stat-num color-orange" id="heroPendingArrear">1</span>
-              <span class="stat-desc">Pending Arrear Γû╛</span>
+              <span class="stat-desc">Pending Arrear ▾</span>
             </div>
           </div>
         </div>
@@ -114,27 +114,27 @@
         <!-- HOME SERVICES SUB-TABS NAVIGATION (6 SERVICES) -->
         <div class="home-sub-tabs-bar">
           <button class="sub-tab-btn active" data-subtab="subRegistration">
-            <span class="sub-icon">≡ƒô¥</span>
+            <span class="sub-icon">📝</span>
             <span>Register for Subjects</span>
           </button>
           <button class="sub-tab-btn" data-subtab="arrearRegistration">
-            <span class="sub-icon">≡ƒöä</span>
+            <span class="sub-icon">🔄</span>
             <span>Register for Arrears</span>
           </button>
           <button class="sub-tab-btn" data-subtab="checkAttendance">
-            <span class="sub-icon">≡ƒôè</span>
+            <span class="sub-icon">📊</span>
             <span>Check Attendance</span>
           </button>
           <button class="sub-tab-btn" data-subtab="feeDetails">
-            <span class="sub-icon">≡ƒÆ│</span>
+            <span class="sub-icon">💳</span>
             <span>Check Fee Details</span>
           </button>
           <button class="sub-tab-btn" data-subtab="paymentDetails">
-            <span class="sub-icon">≡ƒº╛</span>
+            <span class="sub-icon">🧾</span>
             <span>Payment & Receipts</span>
           </button>
           <button class="sub-tab-btn" data-subtab="hallTicket">
-            <span class="sub-icon">≡ƒÄ½</span>
+            <span class="sub-icon">🎫</span>
             <span>Hall Ticket / Admit Card</span>
           </button>
         </div>
@@ -145,9 +145,9 @@
           <!-- 2-DAY REGISTRATION DEADLINE WINDOW BANNER -->
           <div class="reg-window-banner" id="regWindowBanner">
             <div class="window-banner-left">
-              <span class="window-clock-icon">ΓÅ│</span>
+              <span class="window-clock-icon">⏳</span>
               <div>
-                <strong>Semester 4 Course Registration Window: 2 Days Only (Aug 17 ΓÇô Aug 19, 2026)</strong>
+                <strong>Semester 4 Course Registration Window: 2 Days Only (Aug 17 – Aug 19, 2026)</strong>
                 <p>Registration window is strictly active for 2 days. You can register for <strong>up to 4 regular subjects</strong> (or 1, 2, 3 subjects). Once submitted, or after the date completes, registration will be closed permanently.</p>
               </div>
             </div>
@@ -160,12 +160,12 @@
           <!-- REGISTRATION LOCKED / CONFIRMED SLIP (SHOWN ONCE REGISTERED OR EXPIRED) -->
           <div class="reg-locked-card hidden" id="regLockedCard">
             <div class="locked-card-header">
-              <span class="locked-icon">≡ƒöÆ</span>
+              <span class="locked-icon">🔒</span>
               <div>
                 <h4>Course Registration Window Closed & Confirmed</h4>
-                <p>Submission timestamp: <strong>17-Aug-2026 ΓÇó 11:15 AM</strong> ΓÇó Academic Session: Fall 2026 (Sem 4)</p>
+                <p>Submission timestamp: <strong>17-Aug-2026 • 11:15 AM</strong> • Academic Session: Fall 2026 (Sem 4)</p>
               </div>
-              <span class="card-tag tag-success" style="margin-left:auto; font-size:12px; padding:4px 12px;">Γ£à SUBMISSION LOCKED</span>
+              <span class="card-tag tag-success" style="margin-left:auto; font-size:12px; padding:4px 12px;">✅ SUBMISSION LOCKED</span>
             </div>
 
             <div class="locked-summary-grid">
@@ -189,10 +189,10 @@
 
             <div class="locked-actions-row">
               <button type="button" class="btn-tool" onclick="alert('Downloading Certified Fall 2026 Course Enrollment Slip for Karthik Prashanth (ID: 202411048)...')">
-                ≡ƒôä Download Official Registration Slip (PDF)
+                📄 Download Official Registration Slip (PDF)
               </button>
               <button type="button" class="btn-link-xs" onclick="CampusApp.reopenRegistrationDemo()" style="color:var(--text-muted); font-size:11px;">
-                ≡ƒöä Reset / Re-open Window (Demo Mode)
+                🔄 Reset / Re-open Window (Demo Mode)
               </button>
             </div>
           </div>
@@ -291,9 +291,9 @@
             </div>
 
             <div class="form-action-row" id="regFormActionRow">
-              <span class="reg-note">Γä╣∩╕Å 2-Day Deadline Policy: You can register for up to 4 subjects. Once submitted, registration closes permanently.</span>
+              <span class="reg-note">ℹ️ 2-Day Deadline Policy: You can register for up to 4 subjects. Once submitted, registration closes permanently.</span>
               <button type="button" class="btn-primary-action" id="btnSubmitSubjectReg">
-                ≡ƒÆ╛ Submit & Lock Course Registration (4 Subjects)
+                💾 Submit & Lock Course Registration (4 Subjects)
               </button>
             </div>
           </form>
@@ -324,7 +324,7 @@
                   </label>
                   <div>
                     <strong><code>MA1301</code> - Applied Linear Algebra & Numerical Analysis</strong>
-                    <p>Semester: 3 ΓÇó Grade: RA (Re-Appearance) ΓÇó Credits: 4</p>
+                    <p>Semester: 3 • Grade: RA (Re-Appearance) • Credits: 4</p>
                   </div>
                 </div>
                 <div class="arrear-fee-col">
@@ -341,7 +341,7 @@
                   </label>
                   <div>
                     <strong><code>PH1101</code> - Engineering Physics & Semiconductor Devices</strong>
-                    <p>Semester: 1 ΓÇó Status: <span style="color:#10b981; font-weight:bold;">Cleared in Sem 2 (Grade B+)</span></p>
+                    <p>Semester: 1 • Status: <span style="color:#10b981; font-weight:bold;">Cleared in Sem 2 (Grade B+)</span></p>
                   </div>
                 </div>
                 <div class="arrear-fee-col">
@@ -372,7 +372,7 @@
               </div>
 
               <button class="btn-primary-action" id="btnRegisterArrearPay" style="width:100%; margin-top:14px;">
-                ≡ƒÆ│ Pay & Confirm Arrear Registration
+                💳 Pay & Confirm Arrear Registration
               </button>
             </div>
           </div>
@@ -387,8 +387,8 @@
             </div>
             <div class="attendance-filter-chips">
               <button class="filter-pill active" onclick="CampusApp.filterAttendance('all')">All Courses</button>
-              <button class="filter-pill" onclick="CampusApp.filterAttendance('warning')">ΓÜá∩╕Å Low Attendance (<75%)</button>
-              <button class="filter-pill" onclick="CampusApp.filterAttendance('eligible')">Γ£à Exam Eligible (ΓëÑ75%)</button>
+              <button class="filter-pill" onclick="CampusApp.filterAttendance('warning')">⚠️ Low Attendance (<75%)</button>
+              <button class="filter-pill" onclick="CampusApp.filterAttendance('eligible')">✅ Exam Eligible (≥75%)</button>
             </div>
           </div>
 
@@ -402,10 +402,10 @@
           <div class="sub-panel-header">
             <div>
               <h3>Tuition & Campus Fee Structure Breakdown</h3>
-              <p>Academic Year 2026-2027 ΓÇó Fall Semester Invoice Details</p>
+              <p>Academic Year 2026-2027 • Fall Semester Invoice Details</p>
             </div>
             <button class="btn-tool" onclick="alert('Downloading official Semester 4 Fee Invoice PDF...')">
-              ≡ƒôÑ Download Fee Invoice
+              📥 Download Fee Invoice
             </button>
           </div>
 
@@ -414,21 +414,21 @@
               <span class="fee-card-tag tag-primary">Tuition</span>
               <h3>$4,800.00</h3>
               <p>Fall Semester Tuition Fee</p>
-              <span class="badge-status-paid">Γ£ô Paid (Receipt #REC-88412)</span>
+              <span class="badge-status-paid">✓ Paid (Receipt #REC-88412)</span>
             </div>
 
             <div class="fee-card">
               <span class="fee-card-tag tag-success">Hostel & Mess</span>
               <h3>$2,200.00</h3>
               <p>APJ Kalam Block (AC Double)</p>
-              <span class="badge-status-paid">Γ£ô Paid (Receipt #REC-88419)</span>
+              <span class="badge-status-paid">✓ Paid (Receipt #REC-88419)</span>
             </div>
 
             <div class="fee-card">
               <span class="fee-card-tag tag-warning">Exam & Arrear</span>
               <h3>$45.00</h3>
               <p>Arrear Examination Registration</p>
-              <span class="badge-status-pending" id="arrearFeeStatusBadge">ΓÅ│ Payment Due</span>
+              <span class="badge-status-pending" id="arrearFeeStatusBadge">⏳ Payment Due</span>
             </div>
 
             <div class="fee-card">
@@ -506,7 +506,7 @@
               <p>Secure Online Campus Payment Portal & Digital Fee Receipts</p>
             </div>
             <button class="btn-primary-action" onclick="CampusApp.openQuickPayModal()">
-              ≡ƒÆ│ Make New Payment
+              💳 Make New Payment
             </button>
           </div>
 
@@ -532,7 +532,7 @@
                     <td>Sem 4 Tuition (Net)</td>
                     <td>Online Banking</td>
                     <td><strong>$2,400.00</strong></td>
-                    <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('REC-2026-88412', '$2,400.00', 'Sem 4 Tuition')">≡ƒôä PDF</button></td>
+                    <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('REC-2026-88412', '$2,400.00', 'Sem 4 Tuition')">📄 PDF</button></td>
                   </tr>
                   <tr>
                     <td><code>REC-2026-88419</code></td>
@@ -540,7 +540,7 @@
                     <td>Hostel & Mess Fall</td>
                     <td>Credit Card</td>
                     <td><strong>$2,200.00</strong></td>
-                    <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('REC-2026-88419', '$2,200.00', 'Hostel & Mess')">≡ƒôä PDF</button></td>
+                    <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('REC-2026-88419', '$2,200.00', 'Hostel & Mess')">📄 PDF</button></td>
                   </tr>
                   <tr>
                     <td><code>REC-2026-71020</code></td>
@@ -548,7 +548,7 @@
                     <td>Sem 3 Tuition Fee</td>
                     <td>UPI / Debit</td>
                     <td><strong>$2,400.00</strong></td>
-                    <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('REC-2026-71020', '$2,400.00', 'Sem 3 Tuition')">≡ƒôä PDF</button></td>
+                    <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('REC-2026-71020', '$2,400.00', 'Sem 3 Tuition')">📄 PDF</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -576,14 +576,14 @@
                 <div class="field">
                   <label>Payment Method</label>
                   <div class="badge-grid" style="margin-top: 4px;">
-                    <label class="pill-badge"><input type="radio" name="payMethod" checked> ≡ƒÆ│ Credit / Debit Card</label>
-                    <label class="pill-badge"><input type="radio" name="payMethod"> ≡ƒÅª Net Banking</label>
-                    <label class="pill-badge"><input type="radio" name="payMethod"> ≡ƒô▒ UPI / Wallet</label>
+                    <label class="pill-badge"><input type="radio" name="payMethod" checked> 💳 Credit / Debit Card</label>
+                    <label class="pill-badge"><input type="radio" name="payMethod"> 🏦 Net Banking</label>
+                    <label class="pill-badge"><input type="radio" name="payMethod"> 📱 UPI / Wallet</label>
                   </div>
                 </div>
 
                 <button type="button" class="btn-primary-action" id="btnExecutePayment" style="width:100%; margin-top:14px;">
-                  ≡ƒöÆ Complete Secure Payment ($45.00)
+                  🔒 Complete Secure Payment ($45.00)
                 </button>
               </form>
             </div>
@@ -598,7 +598,7 @@
               <p>Official admit card authorized by the Controller of Examinations.</p>
             </div>
             <button class="btn-tool" onclick="window.print()">
-              ≡ƒû¿∩╕Å Print Official Hall Ticket
+              🖨️ Print Official Hall Ticket
             </button>
           </div>
 
@@ -607,9 +607,9 @@
               <div class="ht-logo">AI</div>
               <div class="ht-univ-title">
                 <h2>UNIVERSITY CAMPUS INSTITUTE OF TECHNOLOGY</h2>
-                <p>Office of the Controller of Examinations ΓÇó End Semester Examinations Fall 2026</p>
+                <p>Office of the Controller of Examinations • End Semester Examinations Fall 2026</p>
               </div>
-              <div class="ht-qr">≡ƒô▒ QR Verified</div>
+              <div class="ht-qr">📱 QR Verified</div>
             </div>
 
             <div class="ht-student-info-grid">
@@ -635,7 +635,7 @@
             </table>
 
             <div class="ht-footer">
-              <p>ΓÜá∩╕Å <strong>Candidate Instructions:</strong> Bring valid Student Identity Card. Electronic gadgets and smart watches are strictly prohibited inside examination halls.</p>
+              <p>⚠️ <strong>Candidate Instructions:</strong> Bring valid Student Identity Card. Electronic gadgets and smart watches are strictly prohibited inside examination halls.</p>
             </div>
           </div>
         </div>
@@ -653,12 +653,12 @@
         <aside class="chat-sidebar">
           <div class="sidebar-header">
             <h3>Quick Topics</h3>
-            <button class="btn-link-xs" id="btnResetChat" title="Start a fresh chat">Γ₧ò New Chat</button>
+            <button class="btn-link-xs" id="btnResetChat" title="Start a fresh chat">➕ New Chat</button>
           </div>
 
           <div class="topic-list">
             <button class="topic-item" onclick="CampusApp.triggerQuery('When is the semester 4 exam timetable?')">
-              <span class="topic-emoji">≡ƒôà</span>
+              <span class="topic-emoji">📅</span>
               <div class="topic-info">
                 <strong>Exam Timetable</strong>
                 <small>Dates, sessions & hall tickets</small>
@@ -666,7 +666,7 @@
             </button>
 
             <button class="topic-item" onclick="CampusApp.triggerQuery('Tell me about CSE department courses and HOD')">
-              <span class="topic-emoji">≡ƒÄô</span>
+              <span class="topic-emoji">🎓</span>
               <div class="topic-info">
                 <strong>Academics & Faculty</strong>
                 <small>HODs, degrees & curriculum</small>
@@ -674,7 +674,7 @@
             </button>
 
             <button class="topic-item" onclick="CampusApp.triggerQuery('What are the hostel fees and mess timings?')">
-              <span class="topic-emoji">≡ƒÅó</span>
+              <span class="topic-emoji">🏢</span>
               <div class="topic-info">
                 <strong>Hostel & Dining</strong>
                 <small>Rooms, fees, warden & curfew</small>
@@ -682,7 +682,7 @@
             </button>
 
             <button class="topic-item" onclick="CampusApp.triggerQuery('What is the tuition fee and scholarships available?')">
-              <span class="topic-emoji">≡ƒÆ│</span>
+              <span class="topic-emoji">💳</span>
               <div class="topic-info">
                 <strong>Fees & Scholarships</strong>
                 <small>Payment dates & merit waivers</small>
@@ -690,7 +690,7 @@
             </button>
 
             <button class="topic-item" onclick="CampusApp.triggerQuery('Tell me about campus placements and top recruiters')">
-              <span class="topic-emoji">≡ƒÆ╝</span>
+              <span class="topic-emoji">💼</span>
               <div class="topic-info">
                 <strong>Placements & Jobs</strong>
                 <small>Highest packages & CDC cell</small>
@@ -698,7 +698,7 @@
             </button>
 
             <button class="topic-item" onclick="CampusApp.triggerQuery('What are the library timings and quiet study rooms?')">
-              <span class="topic-emoji">≡ƒôû</span>
+              <span class="topic-emoji">📖</span>
               <div class="topic-info">
                 <strong>Central Library</strong>
                 <small>24/7 exam access & e-resources</small>
@@ -706,7 +706,7 @@
             </button>
 
             <button class="topic-item" onclick="CampusApp.triggerQuery('Upcoming campus fests and hackathons')">
-              <span class="topic-emoji">≡ƒÄë</span>
+              <span class="topic-emoji">🎉</span>
               <div class="topic-info">
                 <strong>Events & Fests</strong>
                 <small>INNOVENT & AURA Fest 2026</small>
@@ -714,7 +714,7 @@
             </button>
 
             <button class="topic-item" onclick="CampusApp.triggerQuery('How to connect to campus wifi?')">
-              <span class="topic-emoji">≡ƒô╢</span>
+              <span class="topic-emoji">📶</span>
               <div class="topic-info">
                 <strong>IT & Wi-Fi Setup</strong>
                 <small>SSID, quota & helpdesk</small>
@@ -722,7 +722,7 @@
             </button>
 
             <button class="topic-item" onclick="CampusApp.triggerQuery('I want to escalate to a human advisor')">
-              <span class="topic-emoji">≡ƒæ¿ΓÇì≡ƒÆ╝</span>
+              <span class="topic-emoji">👨‍💼</span>
               <div class="topic-info">
                 <strong>Talk to Human</strong>
                 <small>Raise support ticket</small>
@@ -765,13 +765,13 @@
 
             <div class="chat-actions-right">
               <button class="btn-tool" id="btnExportChat" title="Export Chat Transcript (JSON)">
-                <span>≡ƒôÑ</span> Export JSON
+                <span>📥</span> Export JSON
               </button>
               <button class="btn-tool" id="btnPrintChat" title="Print / Save PDF">
-                <span>≡ƒû¿∩╕Å</span> Print PDF
+                <span>🖨️</span> Print PDF
               </button>
               <button class="btn-tool danger" id="btnClearChatHistory" title="Clear Conversation">
-                <span>≡ƒùæ∩╕Å</span> Clear
+                <span>🗑️</span> Clear
               </button>
             </div>
           </div>
@@ -800,7 +800,7 @@
           <div class="chat-input-container">
             <form id="chatForm" class="chat-input-form" onsubmit="return false;">
               <button type="button" class="input-action-btn mic-btn" id="btnVoiceInput" title="Voice Input (Speech-to-Text)">
-                <span id="micIcon">≡ƒÄñ</span>
+                <span id="micIcon">🎤</span>
               </button>
               
               <input type="text" id="chatInput" class="chat-text-input"
@@ -809,12 +809,12 @@
               
               <button type="submit" class="send-btn" id="btnSendMessage" aria-label="Send message">
                 <span class="send-text">Send</span>
-                <span class="send-arrow">Γ₧ö</span>
+                <span class="send-arrow">➔</span>
               </button>
             </form>
             <div class="input-helper-bar">
-              <span>≡ƒÆí Press <kbd>Enter</kbd> to send ΓÇó Powered by TF-IDF & Cosine Intent Classification + NER</span>
-              <span id="liveLatencyBadge" class="latency-badge">ΓÜí Latency: -- ms</span>
+              <span>💡 Press <kbd>Enter</kbd> to send • Powered by TF-IDF & Cosine Intent Classification + NER</span>
+              <span id="liveLatencyBadge" class="latency-badge">⚡ Latency: -- ms</span>
             </div>
           </div>
         </div>
@@ -869,22 +869,22 @@
             <h2>Model Performance & Live Analytics</h2>
             <p>Real-time metrics, evaluation benchmarks (Precision / Recall / F1-Score), and conversation coverage.</p>
           </div>
-          <button class="btn-tool" onclick="CampusApp.refreshAnalytics()">≡ƒöä Refresh Metrics</button>
+          <button class="btn-tool" onclick="CampusApp.refreshAnalytics()">🔄 Refresh Metrics</button>
         </div>
 
         <!-- KPI CARDS -->
         <div class="kpi-grid">
           <div class="kpi-card">
-            <div class="kpi-icon-wrap icon-blue">≡ƒÆ¼</div>
+            <div class="kpi-icon-wrap icon-blue">💬</div>
             <div class="kpi-content">
               <span class="kpi-label">Total Queries Handled</span>
               <h3 class="kpi-val" id="kpiTotalQueries">142</h3>
-              <span class="kpi-sub positive">Γû▓ 100% real-time tracking</span>
+              <span class="kpi-sub positive">▲ 100% real-time tracking</span>
             </div>
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-icon-wrap icon-green">≡ƒÄ»</div>
+            <div class="kpi-icon-wrap icon-green">🎯</div>
             <div class="kpi-content">
               <span class="kpi-label">Average Intent Confidence</span>
               <h3 class="kpi-val" id="kpiConfidence">96.4%</h3>
@@ -893,7 +893,7 @@
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-icon-wrap icon-purple">ΓÜí</div>
+            <div class="kpi-icon-wrap icon-purple">⚡</div>
             <div class="kpi-content">
               <span class="kpi-label">Average Response Latency</span>
               <h3 class="kpi-val" id="kpiAvgLatency">18 ms</h3>
@@ -902,16 +902,16 @@
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-icon-wrap icon-orange">≡ƒ¢í∩╕Å</div>
+            <div class="kpi-icon-wrap icon-orange">🛡️</div>
             <div class="kpi-content">
               <span class="kpi-label">Model F1-Score (Macro)</span>
               <h3 class="kpi-val">0.962</h3>
-              <span class="kpi-sub">Precision: 0.968 ΓÇó Recall: 0.957</span>
+              <span class="kpi-sub">Precision: 0.968 • Recall: 0.957</span>
             </div>
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-icon-wrap icon-red">ΓÜá∩╕Å</div>
+            <div class="kpi-icon-wrap icon-red">⚠️</div>
             <div class="kpi-content">
               <span class="kpi-label">Fallback Rate</span>
               <h3 class="kpi-val" id="kpiFallbackRate">3.1%</h3>
@@ -920,7 +920,7 @@
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-icon-wrap icon-indigo">≡ƒÄ½</div>
+            <div class="kpi-icon-wrap icon-indigo">🎫</div>
             <div class="kpi-content">
               <span class="kpi-label">Human Support Tickets</span>
               <h3 class="kpi-val" id="kpiTicketsCount">1</h3>
@@ -978,7 +978,7 @@
         <!-- ESCALATED TICKETS QUEUE -->
         <div class="analytics-panel" style="margin-top: 25px;">
           <div class="panel-header">
-            <h3>≡ƒÄ½ Human Support Escalation Queue (Module 2 Hand-off)</h3>
+            <h3>🎫 Human Support Escalation Queue (Module 2 Hand-off)</h3>
             <span class="card-tag tag-warning">Live Queue</span>
           </div>
           <div id="ticketsQueueTable">
@@ -996,14 +996,14 @@
   <!-- ================================================================ -->
   <div class="modal hidden" id="studentProfileModal" onclick="if(event.target === this) CampusApp.closeProfileModal()">
     <div class="modal-box profile-modal-box">
-      <button class="modal-close" id="btnProfileModalClose" onclick="CampusApp.closeProfileModal()" aria-label="Close">├ù</button>
+      <button class="modal-close" id="btnProfileModalClose" onclick="CampusApp.closeProfileModal()" aria-label="Close">×</button>
       
       <div class="profile-modal-header">
-        <div class="student-modal-avatar">≡ƒæ¿ΓÇì≡ƒÄô</div>
+        <div class="student-modal-avatar">👨‍🎓</div>
         <div>
           <h3 id="profModalName">Karthik Prashanth</h3>
           <span class="pill-code" id="profModalId">College ID: 202411048</span>
-          <span class="card-tag tag-primary" style="margin-left: 6px;">B.Tech CSE ΓÇó Sem 4</span>
+          <span class="card-tag tag-primary" style="margin-left: 6px;">B.Tech CSE • Sem 4</span>
         </div>
       </div>
 
@@ -1011,7 +1011,7 @@
         
         <!-- SECTION 1: STUDENT PERSONAL CONTACT DETAILS -->
         <div class="profile-section-card">
-          <h4>≡ƒô▒ Student Contact & Academic Information</h4>
+          <h4>📱 Student Contact & Academic Information</h4>
           <div class="profile-grid">
             <div class="prof-item">
               <span class="prof-label">Full Name:</span>
@@ -1050,7 +1050,7 @@
 
         <!-- SECTION 2: PARENTS & GUARDIAN DETAILS -->
         <div class="profile-section-card">
-          <h4>≡ƒæ¿ΓÇì≡ƒæ⌐ΓÇì≡ƒæª Parents & Guardian Information</h4>
+          <h4>👨‍👩‍👦 Parents & Guardian Information</h4>
           <div class="profile-grid">
             <div class="prof-item">
               <span class="prof-label">Father's Name:</span>
@@ -1074,7 +1074,7 @@
             </div>
             <div class="prof-item" style="grid-column: span 2;">
               <span class="prof-label">Emergency Campus Contact:</span>
-              <span style="color:var(--danger); font-weight:700;">+91 98450 12345 (Father) ΓÇó +1 (555) 450-1001 (Hostel Warden)</span>
+              <span style="color:var(--danger); font-weight:700;">+91 98450 12345 (Father) • +1 (555) 450-1001 (Hostel Warden)</span>
             </div>
           </div>
         </div>
@@ -1092,10 +1092,10 @@
   <!-- ================================================================ -->
   <div class="modal hidden" id="totalSubjectsModal" onclick="if(event.target === this) CampusApp.closeModal('totalSubjectsModal')">
     <div class="modal-box profile-modal-box" style="width: min(840px, 95vw);">
-      <button class="modal-close" onclick="CampusApp.closeModal('totalSubjectsModal')" aria-label="Close">├ù</button>
+      <button class="modal-close" onclick="CampusApp.closeModal('totalSubjectsModal')" aria-label="Close">×</button>
       
       <div class="profile-modal-header">
-        <div class="student-modal-avatar" style="background:linear-gradient(135deg, #3b82f6, #6366f1);">≡ƒôÜ</div>
+        <div class="student-modal-avatar" style="background:linear-gradient(135deg, #3b82f6, #6366f1);">📚</div>
         <div>
           <h3>All Enrolled & Curriculum Subjects (18 Courses)</h3>
           <span class="pill-code">Total Credits: 64 Credits</span>
@@ -1158,10 +1158,10 @@
   <!-- ================================================================ -->
   <div class="modal hidden" id="passedSubjectsModal" onclick="if(event.target === this) CampusApp.closeModal('passedSubjectsModal')">
     <div class="modal-box profile-modal-box" style="width: min(840px, 95vw);">
-      <button class="modal-close" onclick="CampusApp.closeModal('passedSubjectsModal')" aria-label="Close">├ù</button>
+      <button class="modal-close" onclick="CampusApp.closeModal('passedSubjectsModal')" aria-label="Close">×</button>
       
       <div class="profile-modal-header">
-        <div class="student-modal-avatar" style="background:linear-gradient(135deg, #10b981, #059669);">Γ£à</div>
+        <div class="student-modal-avatar" style="background:linear-gradient(135deg, #10b981, #059669);">✅</div>
         <div>
           <h3>Passed Subjects & Academic Grade Transcript (13 Cleared)</h3>
           <span class="pill-code">Cumulative CGPA: 8.92</span>
@@ -1205,7 +1205,7 @@
       </div>
 
       <div class="profile-modal-footer" style="display:flex; justify-content:space-between; align-items:center;">
-        <button class="btn-tool" onclick="alert('Downloading Certified Academic Transcript PDF for Karthik Prashanth (ID: 202411048)...')">≡ƒôÑ Download Official Transcript PDF</button>
+        <button class="btn-tool" onclick="alert('Downloading Certified Academic Transcript PDF for Karthik Prashanth (ID: 202411048)...')">📥 Download Official Transcript PDF</button>
         <button class="modal-btn" onclick="CampusApp.closeModal('passedSubjectsModal')">Close Transcript</button>
       </div>
     </div>
@@ -1216,10 +1216,10 @@
   <!-- ================================================================ -->
   <div class="modal hidden" id="arrearSubjectsModal" onclick="if(event.target === this) CampusApp.closeModal('arrearSubjectsModal')">
     <div class="modal-box profile-modal-box" style="width: min(760px, 95vw);">
-      <button class="modal-close" onclick="CampusApp.closeModal('arrearSubjectsModal')" aria-label="Close">├ù</button>
+      <button class="modal-close" onclick="CampusApp.closeModal('arrearSubjectsModal')" aria-label="Close">×</button>
       
       <div class="profile-modal-header">
-        <div class="student-modal-avatar" style="background:linear-gradient(135deg, #f59e0b, #d97706);">≡ƒöä</div>
+        <div class="student-modal-avatar" style="background:linear-gradient(135deg, #f59e0b, #d97706);">🔄</div>
         <div>
           <h3>Arrear Record & Published Re-Examination Result</h3>
           <span class="pill-code">Supplementary Session: Aug 2026</span>
@@ -1233,7 +1233,7 @@
         <div class="arrear-result-banner-card">
           <div class="arrear-result-header">
             <div class="result-badge-row">
-              <span class="card-tag tag-success" style="font-size:12px; padding:4px 10px;">≡ƒÅå RE-EXAMINATION RESULT DECLARED</span>
+              <span class="card-tag tag-success" style="font-size:12px; padding:4px 10px;">🏆 RE-EXAMINATION RESULT DECLARED</span>
               <span class="pill-code">COE Reg ID: COE/SUPP/2026/0942</span>
             </div>
             <h4 style="margin: 8px 0 4px 0; font-size:16px;"><code>MA1301</code> - Applied Linear Algebra & Numerical Analysis</h4>
@@ -1255,22 +1255,22 @@
             </div>
             <div class="result-stat-box">
               <span class="res-label">Final Clearance Status:</span>
-              <strong style="color:var(--success); font-size:14px;">Γ£à PASSED (Cleared)</strong>
+              <strong style="color:var(--success); font-size:14px;">✅ PASSED (Cleared)</strong>
             </div>
           </div>
 
           <div class="arrear-result-actions" style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
             <button class="btn-tool" onclick="alert('Downloading Controller of Examinations Certified Supplementary Grade Card for MA1301...')">
-              ≡ƒôä Download Supplementary Marksheet (PDF)
+              📄 Download Supplementary Marksheet (PDF)
             </button>
             <button class="btn-link-xs" style="padding:6px 12px; font-size:12px;" onclick="CampusApp.triggerQuery('What is my final grade and credit status in MA1301 arrear paper?')">
-              ≡ƒÆ¼ Ask AI to Verify SGPA Impact
+              💬 Ask AI to Verify SGPA Impact
             </button>
           </div>
         </div>
 
         <div class="profile-section-card" style="margin-top:12px;">
-          <h4>Γä╣∩╕Å University Arrear Clearance Policy</h4>
+          <h4>ℹ️ University Arrear Clearance Policy</h4>
           <p style="font-size:12.5px; color:var(--text-muted); line-height:1.5;">
             Candidates who have successfully obtained a passing letter grade (Grade B or above) in supplementary re-evaluations have their credits automatically updated into the university centralized database with 100% attendance eligibility certificate issued.
           </p>

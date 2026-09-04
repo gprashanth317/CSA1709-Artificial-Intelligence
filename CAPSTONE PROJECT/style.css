@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    AI Campus Assistant - Complete Design System & Stylesheet
    ========================================================================== */
 
@@ -1945,7 +1945,7 @@ input.invalid {
 }
 
 .clean-list li::before {
-  content: "ΓÇó";
+  content: "•";
   color: var(--primary);
   font-weight: bold;
   margin-right: 8px;

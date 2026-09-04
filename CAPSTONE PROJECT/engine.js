@@ -1,4 +1,4 @@
-﻿/**
+/**
  * AI Campus Assistant - Core AI Engine
  * -------------------------------------
  * Module 1: Natural Language Understanding (NLU), Entity Extraction (NER), Intent Classification
@@ -837,17 +837,17 @@
             text: 'Hello! I am your AI Campus Assistant. How can I help you today?',
             html: `
               <div class="bot-msg-body">
-                <p>≡ƒæï <strong>Welcome to the AI Campus Assistant!</strong></p>
+                <p>👋 <strong>Welcome to the AI Campus Assistant!</strong></p>
                 <p>I can provide instant real-time information regarding:</p>
                 <div class="badge-grid">
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('When is the semester exam timetable?')">≡ƒôà Exam Timetables</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Tell me about CSE courses and syllabus')">≡ƒôÜ Courses & Syllabus</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('What is the tuition fee for BTech?')">≡ƒÆ│ Tuition & Fees</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Hostel fee structure and mess timings')">≡ƒÅó Hostel & Mess</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Library timings and book borrowing')">≡ƒôû Library Access</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Campus placement package and recruiters')">≡ƒÆ╝ Placements</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('College bus routes and timings')">≡ƒÜî Campus Bus Routes</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('How to connect to campus wifi?')">≡ƒô╢ Wi-Fi Support</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('When is the semester exam timetable?')">📅 Exam Timetables</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Tell me about CSE courses and syllabus')">📚 Courses & Syllabus</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('What is the tuition fee for BTech?')">💳 Tuition & Fees</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Hostel fee structure and mess timings')">🏢 Hostel & Mess</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Library timings and book borrowing')">📖 Library Access</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Campus placement package and recruiters')">💼 Placements</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('College bus routes and timings')">🚌 Campus Bus Routes</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('How to connect to campus wifi?')">📶 Wi-Fi Support</span>
                 </div>
                 <p style="margin-top: 10px; font-size: 0.9em; color: var(--muted);">Tap a quick reply or type any question below.</p>
               </div>
@@ -864,14 +864,14 @@
         case 'goodbye':
           return {
             text: 'Goodbye! Feel free to ask whenever you need campus information. Have a great day!',
-            html: `<div class="bot-msg-body"><p>≡ƒæï <strong>Goodbye!</strong> Have a productive day on campus. Reach back anytime!</p></div>`,
+            html: `<div class="bot-msg-body"><p>👋 <strong>Goodbye!</strong> Have a productive day on campus. Reach back anytime!</p></div>`,
             quickReplies: ['Start New Conversation', 'Check Campus Events']
           };
 
         case 'thanks':
           return {
             text: 'You are welcome! Let me know if there is anything else you need help with.',
-            html: `<div class="bot-msg-body"><p>Γ£¿ <strong>Always happy to help!</strong> Is there any other campus information you need?</p></div>`,
+            html: `<div class="bot-msg-body"><p>✨ <strong>Always happy to help!</strong> Is there any other campus information you need?</p></div>`,
             quickReplies: ['Exam Schedule', 'Library Timings', 'Placements']
           };
 
@@ -883,7 +883,7 @@
                 <div class="rich-card info-card">
                   <div class="card-header">
                     <span class="card-tag">Capstone Project CSA1709</span>
-                    <h4>≡ƒñû AI Campus Assistant</h4>
+                    <h4>🤖 AI Campus Assistant</h4>
                   </div>
                   <p>I am an intelligent conversational system built for <strong>Student Query Assistance & Campus Information</strong>.</p>
                   <ul class="clean-list">
@@ -909,7 +909,7 @@
               text: 'Which semester examination schedule would you like to view?',
               html: `
                 <div class="bot-msg-body">
-                  <p>≡ƒôà <strong>Examination Schedule Inquirer</strong></p>
+                  <p>📅 <strong>Examination Schedule Inquirer</strong></p>
                   <p>Please select your semester to view the verified examination timetable:</p>
                 </div>
               `,
@@ -926,7 +926,7 @@
                 <div class="rich-card">
                   <div class="card-header">
                     <span class="card-tag tag-success">Active Portal</span>
-                    <h4>≡ƒôè Semester Results & Grade Cards</h4>
+                    <h4>📊 Semester Results & Grade Cards</h4>
                   </div>
                   <p>Results for the recent examinations are available online.</p>
                   <ul class="clean-list">
@@ -936,7 +936,7 @@
                     <li><strong>Grade Sheet:</strong> Digital copy with QR verification can be downloaded instantly.</li>
                   </ul>
                   <div class="card-actions">
-                    <button class="action-btn-sm" onclick="alert('Redirecting to University Results Portal (Demo Simulation)')">≡ƒîÉ Open Results Portal</button>
+                    <button class="action-btn-sm" onclick="alert('Redirecting to University Results Portal (Demo Simulation)')">🌐 Open Results Portal</button>
                   </div>
                 </div>
               </div>
@@ -953,7 +953,7 @@
                 <div class="rich-card">
                   <div class="card-header">
                     <span class="card-tag tag-primary">${dept.code} Department</span>
-                    <h4>≡ƒÄô ${dept.name}</h4>
+                    <h4>🎓 ${dept.name}</h4>
                   </div>
                   <p><strong>Head of Department:</strong> ${dept.hod}</p>
                   <p><strong>Office Location:</strong> ${dept.office}</p>
@@ -965,8 +965,8 @@
                     </div>
                   </div>
                   <div class="card-actions" style="margin-top: 12px;">
-                    <button class="action-btn-sm" onclick="CampusApp.triggerQuery('What are the faculty members in ${dept.code}?')">≡ƒæ¿ΓÇì≡ƒÅ½ Faculty Directory</button>
-                    <button class="action-btn-sm" onclick="CampusApp.triggerQuery('Tuition fees for ${dept.code}')">≡ƒÆ│ Fee Details</button>
+                    <button class="action-btn-sm" onclick="CampusApp.triggerQuery('What are the faculty members in ${dept.code}?')">👨‍🏫 Faculty Directory</button>
+                    <button class="action-btn-sm" onclick="CampusApp.triggerQuery('Tuition fees for ${dept.code}')">💳 Fee Details</button>
                   </div>
                 </div>
               </div>
@@ -993,7 +993,7 @@
                 <div class="rich-card">
                   <div class="card-header">
                     <span class="card-tag">Regular Hours</span>
-                    <h4>ΓÅ░ Daily Academic Lecture Timetable</h4>
+                    <h4>⏰ Daily Academic Lecture Timetable</h4>
                   </div>
                   <table class="data-table">
                     <thead>
@@ -1022,7 +1022,7 @@
                 <div class="rich-card">
                   <div class="card-header">
                     <span class="card-tag tag-warning">Fall 2026 Schedule</span>
-                    <h4>≡ƒÆ│ Tuition Fees & Scholarships</h4>
+                    <h4>💳 Tuition Fees & Scholarships</h4>
                   </div>
                   <ul class="clean-list">
                     <li><strong>B.Tech Programs:</strong> ${CAMPUS_KB.fees.btechTuition}</li>
@@ -1036,7 +1036,7 @@
                     <div style="margin-top: 6px; font-size: 0.88em;">
                       ${CAMPUS_KB.fees.scholarships.map(s => `
                         <div class="sub-card">
-                          <strong>≡ƒÅå ${s.name}</strong><br>
+                          <strong>🏆 ${s.name}</strong><br>
                           <span style="color: var(--muted);">${s.criteria} (Apply by ${s.applyBy})</span>
                         </div>
                       `).join('')}
@@ -1056,7 +1056,7 @@
                 <div class="rich-card">
                   <div class="card-header">
                     <span class="card-tag tag-info">Campus Residence</span>
-                    <h4>≡ƒÅó Hostel & Dining Services</h4>
+                    <h4>🏢 Hostel & Dining Services</h4>
                   </div>
                   <p><strong>Curfew:</strong> ${CAMPUS_KB.hostels.curfew}</p>
                   <p><strong>Mess Timings:</strong> ${CAMPUS_KB.hostels.messTimings}</p>
@@ -1091,7 +1091,7 @@
                 <div class="rich-card">
                   <div class="card-header">
                     <span class="card-tag tag-success">Open Today</span>
-                    <h4>≡ƒôû Central Knowledge & Digital Library</h4>
+                    <h4>📖 Central Knowledge & Digital Library</h4>
                   </div>
                   <p><strong>Location:</strong> ${CAMPUS_KB.library.location}</p>
                   <p><strong>Regular Hours:</strong> ${CAMPUS_KB.library.timings}</p>
@@ -1112,12 +1112,12 @@
                 <div class="rich-card">
                   <div class="card-header">
                     <span class="card-tag tag-warning">Semester Highlights</span>
-                    <h4>≡ƒÄë Upcoming Campus Events & Fests</h4>
+                    <h4>🎉 Upcoming Campus Events & Fests</h4>
                   </div>
                   ${CAMPUS_KB.events.map(ev => `
                     <div class="sub-card">
-                      <strong>≡ƒÜÇ ${ev.name}</strong><br>
-                      <span style="font-size:0.85em; color:var(--muted);">≡ƒôà ${ev.date} | ≡ƒôì ${ev.venue}</span>
+                      <strong>🚀 ${ev.name}</strong><br>
+                      <span style="font-size:0.85em; color:var(--muted);">📅 ${ev.date} | 📍 ${ev.venue}</span>
                       ${ev.prizePool ? `<br><span class="pill-code" style="color:#059669; background:#d1fae5;">Prize Pool: ${ev.prizePool}</span>` : ''}
                     </div>
                   `).join('')}
@@ -1135,7 +1135,7 @@
                 <div class="rich-card">
                   <div class="card-header">
                     <span class="card-tag tag-primary">CDC Report 2025-26</span>
-                    <h4>≡ƒÆ╝ Placement & Career Records</h4>
+                    <h4>💼 Placement & Career Records</h4>
                   </div>
                   <div class="stats-mini-grid">
                     <div class="mini-stat">
@@ -1167,7 +1167,7 @@
                 <div class="rich-card">
                   <div class="card-header">
                     <span class="card-tag">Transit System</span>
-                    <h4>≡ƒÜî Campus Bus & Transportation</h4>
+                    <h4>🚌 Campus Bus & Transportation</h4>
                   </div>
                   <p><strong>Fleet:</strong> ${CAMPUS_KB.transport.buses}</p>
                   <p><strong>Morning Arrival:</strong> ${CAMPUS_KB.transport.morningArrival}</p>
@@ -1188,7 +1188,7 @@
                 <div class="rich-card">
                   <div class="card-header">
                     <span class="card-tag tag-success">IT Operations</span>
-                    <h4>≡ƒô╢ High-Speed Campus Wi-Fi & IT Support</h4>
+                    <h4>📶 High-Speed Campus Wi-Fi & IT Support</h4>
                   </div>
                   <ul class="clean-list">
                     <li><strong>Network SSID:</strong> <code>${CAMPUS_KB.itSupport.wifiSSID}</code></li>
@@ -1221,7 +1221,7 @@
                 <div class="rich-card warning-card">
                   <div class="card-header">
                     <span class="card-tag tag-danger">Escalation Generated</span>
-                    <h4>≡ƒÄ½ Support Ticket Raised: ${ticketId}</h4>
+                    <h4>🎫 Support Ticket Raised: ${ticketId}</h4>
                   </div>
                   <p>Your query has been escalated to the <strong>Student Welfare & Support Office</strong>.</p>
                   <ul class="clean-list">
@@ -1244,14 +1244,14 @@
             text: 'I am not completely sure about that query. Could you try rephrasing or choose one of these popular campus topics?',
             html: `
               <div class="bot-msg-body">
-                <p>≡ƒñö <strong>I didn't quite catch that.</strong></p>
+                <p>🤔 <strong>I didn't quite catch that.</strong></p>
                 <p>Here are some common topics you can ask me about:</p>
                 <div class="badge-grid" style="margin-top: 8px;">
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('When are the semester exams?')">≡ƒôà Exam Dates</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Hostel fee structure')">≡ƒÅó Hostel & Mess</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Tuition fee payment')">≡ƒÆ│ Fees & Scholarships</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Placement statistics')">≡ƒÆ╝ Placements</span>
-                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Connect me with human support')">≡ƒæ¿ΓÇì≡ƒÆ╝ Talk to Human</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('When are the semester exams?')">📅 Exam Dates</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Hostel fee structure')">🏢 Hostel & Mess</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Tuition fee payment')">💳 Fees & Scholarships</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Placement statistics')">💼 Placements</span>
+                  <span class="pill-badge" onclick="CampusApp.triggerQuery('Connect me with human support')">👨‍💼 Talk to Human</span>
                 </div>
               </div>
             `,
@@ -1296,15 +1296,15 @@
             <div class="rich-card">
               <div class="card-header">
                 <span class="card-tag tag-primary">${schedule.semester}</span>
-                <h4>≡ƒôà ${schedule.type}</h4>
+                <h4>📅 ${schedule.type}</h4>
               </div>
               <p><strong>Examination Window:</strong> ${schedule.startDate} to ${schedule.endDate}</p>
               <p><strong>Session Timing:</strong> ${schedule.sessionTime}</p>
               <p><strong>Hall Ticket Release:</strong> ${schedule.hallTicketRelease}</p>
               ${tableHtml}
               <div class="card-actions" style="margin-top: 12px;">
-                <button class="action-btn-sm" onclick="CampusApp.downloadSchedule('${schedule.semester}')">≡ƒôÑ Download PDF Timetable</button>
-                <button class="action-btn-sm" onclick="CampusApp.triggerQuery('Exam rules and regulations')">≡ƒôï Exam Guidelines</button>
+                <button class="action-btn-sm" onclick="CampusApp.downloadSchedule('${schedule.semester}')">📥 Download PDF Timetable</button>
+                <button class="action-btn-sm" onclick="CampusApp.triggerQuery('Exam rules and regulations')">📋 Exam Guidelines</button>
               </div>
             </div>
           </div>
@@ -1322,15 +1322,15 @@
             <div class="rich-card">
               <div class="card-header">
                 <span class="card-tag">${dept.code} Faculty</span>
-                <h4>≡ƒæ¿ΓÇì≡ƒÅ½ ${dept.name} - Directory</h4>
+                <h4>👨‍🏫 ${dept.name} - Directory</h4>
               </div>
               <div class="faculty-card-inner">
                 <div class="avatar-ph">HOD</div>
                 <div>
                   <strong>${dept.hod}</strong><br>
                   <span style="font-size:0.85em; color:var(--muted);">Professor & Head of Department</span><br>
-                  <span style="font-size:0.85em;">≡ƒôì ${dept.office}</span><br>
-                  <span style="font-size:0.85em;">Γ£ë∩╕Å <a href="mailto:${dept.email}">${dept.email}</a></span>
+                  <span style="font-size:0.85em;">📍 ${dept.office}</span><br>
+                  <span style="font-size:0.85em;">✉️ <a href="mailto:${dept.email}">${dept.email}</a></span>
                 </div>
               </div>
               <p style="margin-top: 10px; font-size: 0.9em;"><strong>Office Hours:</strong> Monday - Thursday: 02:30 PM - 04:30 PM (Prior appointment recommended).</p>

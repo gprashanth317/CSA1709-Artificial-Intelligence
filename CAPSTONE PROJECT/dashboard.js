@@ -1,4 +1,4 @@
-﻿/**
+/**
  * AI Campus Assistant - Dashboard Controller & Application Logic
  * ---------------------------------------------------------------
  * Manages Home Student Portal (Subjects [Max 4], Arrears, Attendance [100% for Arrears],
@@ -192,7 +192,7 @@
 
     recognition.onstart = function () {
       AppState.isListening = true;
-      DOM.micIcon.textContent = '≡ƒö┤';
+      DOM.micIcon.textContent = '🔴';
       DOM.btnVoiceInput.classList.add('recording-pulse');
       showToast('Listening... Speak your campus question now.');
     };
@@ -232,7 +232,7 @@
 
   function stopListening() {
     AppState.isListening = false;
-    DOM.micIcon.textContent = '≡ƒÄñ';
+    DOM.micIcon.textContent = '🎤';
     DOM.btnVoiceInput.classList.remove('recording-pulse');
   }
 
@@ -250,7 +250,7 @@
     utterance.rate = 1.05;
     utterance.pitch = 1.0;
     window.speechSynthesis.speak(utterance);
-    showToast('≡ƒöè Reading response aloud...');
+    showToast('🔊 Reading response aloud...');
   }
 
   // =========================================================================
@@ -298,7 +298,7 @@
   // =========================================================================
   function initTheme() {
     document.documentElement.setAttribute('data-theme', AppState.theme);
-    DOM.themeIcon.textContent = AppState.theme === 'dark' ? 'ΓÿÇ∩╕Å' : '≡ƒîÖ';
+    DOM.themeIcon.textContent = AppState.theme === 'dark' ? '☀️' : '🌙';
   }
 
   function toggleTheme() {
@@ -311,7 +311,7 @@
   function toggleSound() {
     AppState.soundEnabled = !AppState.soundEnabled;
     localStorage.setItem('campusSound', AppState.soundEnabled);
-    DOM.soundIcon.textContent = AppState.soundEnabled ? '≡ƒöö' : '≡ƒöò';
+    DOM.soundIcon.textContent = AppState.soundEnabled ? '🔔' : '🔕';
     showToast(`Sound ${AppState.soundEnabled ? 'Enabled' : 'Muted'}`);
   }
 
@@ -376,14 +376,14 @@
       const card = document.createElement('div');
       card.className = `attendance-card ${isWarn ? 'warn-border' : ''} ${isArrear ? 'arrear-att-card' : ''}`;
       
-      let badgeTag = `Γ£à Exam Eligible`;
+      let badgeTag = `✅ Exam Eligible`;
       let badgeClass = `tag-success`;
 
       if (isArrear) {
-        badgeTag = `≡ƒîƒ Arrear (100% Cleared)`;
+        badgeTag = `🌟 Arrear (100% Cleared)`;
         badgeClass = `tag-info`;
       } else if (isWarn) {
-        badgeTag = `ΓÜá∩╕Å Low Attendance (<75%)`;
+        badgeTag = `⚠️ Low Attendance (<75%)`;
         badgeClass = `tag-danger`;
       }
 
@@ -395,7 +395,7 @@
           </span>
         </div>
         <h4 class="att-course-title">${item.name}</h4>
-        <p class="att-instructor">≡ƒæ¿ΓÇì≡ƒÅ½ Instructor / Faculty: ${item.faculty}</p>
+        <p class="att-instructor">👨‍🏫 Instructor / Faculty: ${item.faculty}</p>
 
         <div class="att-progress-wrap">
           <div class="att-progress-bar">
@@ -409,17 +409,17 @@
 
         ${isArrear ? `
           <div class="att-arrear-note">
-            Γ£à <strong>Arrear Attendance Verified:</strong> Re-examination candidate has satisfied the full <strong>100% mandatory attendance clearance</strong> for laboratory/theory re-registration.
+            ✅ <strong>Arrear Attendance Verified:</strong> Re-examination candidate has satisfied the full <strong>100% mandatory attendance clearance</strong> for laboratory/theory re-registration.
           </div>
         ` : (isWarn ? `
           <div class="att-warn-note">
-            ΓÜá∩╕Å <strong>Action Required:</strong> You need to attend <strong>${item.needed || 3} more consecutive lectures</strong> without absence to cross the mandatory 75% examination eligibility threshold.
+            ⚠️ <strong>Action Required:</strong> You need to attend <strong>${item.needed || 3} more consecutive lectures</strong> without absence to cross the mandatory 75% examination eligibility threshold.
           </div>
         ` : '')}
 
         <div class="att-card-actions">
           <button class="action-btn-sm" onclick="CampusApp.triggerQuery('What is the attendance policy and examination condonation rules for ${item.code}?')">
-            ≡ƒÆ¼ Ask AI Attendance Rules
+            💬 Ask AI Attendance Rules
           </button>
         </div>
       `;
@@ -438,7 +438,7 @@
         // Check if exceeded limit of 4
         if (checkedBoxes.length > MAX_REGULAR_SUBJECTS) {
           e.target.checked = false;
-          showToast(`ΓÜá∩╕Å Registration Limit: A student can register for a maximum of 4 regular subjects per semester.`);
+          showToast(`⚠️ Registration Limit: A student can register for a maximum of 4 regular subjects per semester.`);
           return;
         }
 
@@ -514,7 +514,7 @@
       }
 
       if (isExpired) {
-        showToast('ΓÜá∩╕Å Registration window has expired and is now officially closed.');
+        showToast('⚠️ Registration window has expired and is now officially closed.');
       }
     }
 
@@ -525,7 +525,7 @@
       const actionRow = document.getElementById('regFormActionRow');
       if (lockedCard) lockedCard.classList.add('hidden');
       if (actionRow) actionRow.style.display = 'flex';
-      showToast('≡ƒöä Course Registration window re-opened (Demo Mode).');
+      showToast('🔄 Course Registration window re-opened (Demo Mode).');
     };
 
     if (DOM.btnSubmitSubjectReg) {
@@ -545,7 +545,7 @@
           updateSubjectCounts();
           renderAttendanceList('all');
           lockRegistration(false);
-          showToast(`≡ƒöÆ Course Registration successfully confirmed and closed (${count} Subjects enrolled)!`);
+          showToast(`🔒 Course Registration successfully confirmed and closed (${count} Subjects enrolled)!`);
         }
       });
     }
@@ -581,7 +581,7 @@
         if (val === 'reval') amt = '30.00';
         if (val === 'fines') amt = '12.00';
         if (DOM.payAmount) DOM.payAmount.value = amt;
-        if (DOM.btnExecutePayment) DOM.btnExecutePayment.textContent = `≡ƒöÆ Complete Secure Payment ($${amt})`;
+        if (DOM.btnExecutePayment) DOM.btnExecutePayment.textContent = `🔒 Complete Secure Payment ($${amt})`;
       });
     }
 
@@ -606,7 +606,7 @@
       <td>${purpose}</td>
       <td>Card / Online</td>
       <td><strong>$${amount}</strong></td>
-      <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('${recId}', '$${amount}', '${purpose}')">≡ƒôä PDF</button></td>
+      <td><button class="btn-link-xs" onclick="CampusApp.viewReceipt('${recId}', '$${amount}', '${purpose}')">📄 PDF</button></td>
     `;
     if (DOM.paymentHistoryBody) {
       DOM.paymentHistoryBody.prepend(row);
@@ -616,7 +616,7 @@
     if (purpose.toLowerCase().includes('arrear')) {
       if (DOM.arrearFeeStatusBadge) {
         DOM.arrearFeeStatusBadge.className = 'badge-status-paid';
-        DOM.arrearFeeStatusBadge.textContent = `Γ£ô Paid (Receipt #${recId})`;
+        DOM.arrearFeeStatusBadge.textContent = `✓ Paid (Receipt #${recId})`;
       }
       if (DOM.arrearRowStatus) {
         DOM.arrearRowStatus.className = 'card-tag tag-success';
@@ -624,7 +624,7 @@
       }
     }
 
-    showToast(`≡ƒÆ│ Payment of $${amount} successful! Receipt #${recId} generated.`);
+    showToast(`💳 Payment of $${amount} successful! Receipt #${recId} generated.`);
   }
 
   // =========================================================================
@@ -691,7 +691,7 @@
       DOM.sessionTurnCount.textContent = result.dialogue.state.turnCount;
       DOM.sessionActiveDept.textContent = result.dialogue.state.activeDepartment || 'CSE';
       DOM.sessionActiveSem.textContent = result.dialogue.state.activeSemester || 'Semester 4';
-      DOM.liveLatencyBadge.textContent = `ΓÜí Latency: ${result.nlu.latencyMs} ms ΓÇó NLU: ${Math.round(result.nlu.confidence * 100)}%`;
+      DOM.liveLatencyBadge.textContent = `⚡ Latency: ${result.nlu.latencyMs} ms • NLU: ${Math.round(result.nlu.confidence * 100)}%`;
 
       // Update Inspector Drawer
       updateNluInspector(result);
@@ -717,7 +717,7 @@
     } else {
       const nluBadge = msg.intent ? `
         <div class="msg-nlu-tag" title="Detected Intent: ${msg.intent} (${Math.round(msg.confidence * 100)}% confidence)">
-          <span>≡ƒÄ» ${msg.intent}</span>
+          <span>🎯 ${msg.intent}</span>
           <span class="conf-pill">${Math.round(msg.confidence * 100)}%</span>
         </div>
       ` : '';
@@ -730,10 +730,10 @@
           <div class="msg-footer">
             <span class="msg-time">${msg.timestamp}</span>
             <div class="msg-actions">
-              <button class="msg-action-btn" onclick="CampusApp.speakResponse('${escapeForJs(msg.text)}')" title="Listen to message">≡ƒöè</button>
-              <button class="msg-action-btn" onclick="CampusApp.copyMessageText('${escapeForJs(msg.text)}')" title="Copy text">≡ƒôï</button>
-              <button class="msg-action-btn" onclick="CampusApp.rateResponse(this, 'up')" title="Helpful response">≡ƒæì</button>
-              <button class="msg-action-btn" onclick="CampusApp.rateResponse(this, 'down')" title="Needs improvement">≡ƒæÄ</button>
+              <button class="msg-action-btn" onclick="CampusApp.speakResponse('${escapeForJs(msg.text)}')" title="Listen to message">🔊</button>
+              <button class="msg-action-btn" onclick="CampusApp.copyMessageText('${escapeForJs(msg.text)}')" title="Copy text">📋</button>
+              <button class="msg-action-btn" onclick="CampusApp.rateResponse(this, 'up')" title="Helpful response">👍</button>
+              <button class="msg-action-btn" onclick="CampusApp.rateResponse(this, 'down')" title="Needs improvement">👎</button>
             </div>
           </div>
         </div>
@@ -778,7 +778,7 @@
       KB.departments.forEach(dept => {
         records.push({
           category: 'Academic Departments',
-          title: `≡ƒÄô ${dept.name} (${dept.code})`,
+          title: `🎓 ${dept.name} (${dept.code})`,
           tag: 'Department',
           content: `
             <p><strong>HOD:</strong> ${dept.hod}</p>
@@ -796,7 +796,7 @@
       KB.examSchedules.forEach(exam => {
         records.push({
           category: 'Exam Schedules',
-          title: `≡ƒôà ${exam.semester} - ${exam.type}`,
+          title: `📅 ${exam.semester} - ${exam.type}`,
           tag: 'Exams',
           content: `
             <p><strong>Window:</strong> ${exam.startDate} to ${exam.endDate}</p>
@@ -812,7 +812,7 @@
     if (category === 'all' || category === 'fees') {
       records.push({
         category: 'Fees & Scholarships',
-        title: '≡ƒÆ│ Tuition Fee Schedule & Payment Due Dates',
+        title: '💳 Tuition Fee Schedule & Payment Due Dates',
         tag: 'Finance',
         content: `
           <p><strong>B.Tech:</strong> ${KB.fees.btechTuition}</p>
@@ -826,7 +826,7 @@
       KB.fees.scholarships.forEach(s => {
         records.push({
           category: 'Fees & Scholarships',
-          title: `≡ƒÅå ${s.name}`,
+          title: `🏆 ${s.name}`,
           tag: 'Scholarship',
           content: `
             <p><strong>Criteria:</strong> ${s.criteria}</p>
@@ -841,7 +841,7 @@
     if (category === 'all' || category === 'hostels') {
       records.push({
         category: 'Hostels & Dining',
-        title: '≡ƒÅó Campus Residences & Dining Hall Timings',
+        title: '🏢 Campus Residences & Dining Hall Timings',
         tag: 'Hostel',
         content: `
           <p><strong>Curfew:</strong> ${KB.hostels.curfew}</p>
@@ -857,7 +857,7 @@
     if (category === 'all' || category === 'library') {
       records.push({
         category: 'Library & Digital',
-        title: `≡ƒôû ${KB.library.name}`,
+        title: `📖 ${KB.library.name}`,
         tag: 'Library',
         content: `
           <p><strong>Location:</strong> ${KB.library.location}</p>
@@ -873,7 +873,7 @@
     if (category === 'all' || category === 'placements') {
       records.push({
         category: 'Placements',
-        title: `≡ƒÆ╝ Campus Placements & Internships (${KB.placements.statsYear})`,
+        title: `💼 Campus Placements & Internships (${KB.placements.statsYear})`,
         tag: 'Placement',
         content: `
           <p><strong>Highest Offer:</strong> ${KB.placements.highestPackage}</p>
@@ -890,7 +890,7 @@
       KB.events.forEach(ev => {
         records.push({
           category: 'Events & Fests',
-          title: `≡ƒÄë ${ev.name}`,
+          title: `🎉 ${ev.name}`,
           tag: 'Event',
           content: `
             <p><strong>Date:</strong> ${ev.date}</p>
@@ -906,7 +906,7 @@
     if (category === 'all' || category === 'transport') {
       records.push({
         category: 'Transport & Buses',
-        title: '≡ƒÜî Campus Bus Network & Timings',
+        title: '🚌 Campus Bus Network & Timings',
         tag: 'Transport',
         content: `
           <p><strong>Routes:</strong> ${KB.transport.buses}</p>
@@ -921,7 +921,7 @@
     if (category === 'all' || category === 'it') {
       records.push({
         category: 'Wi-Fi & IT Support',
-        title: '≡ƒô╢ University Wi-Fi & IT Helpdesk',
+        title: '📶 University Wi-Fi & IT Helpdesk',
         tag: 'IT Support',
         content: `
           <p><strong>SSID:</strong> ${KB.itSupport.wifiSSID}</p>
@@ -941,7 +941,7 @@
     if (filtered.length === 0) {
       DOM.kbGridContainer.innerHTML = `
         <div class="no-records-msg">
-          <p>≡ƒöì No matching campus records found for "<strong>${escapeHtml(searchQuery)}</strong>".</p>
+          <p>🔍 No matching campus records found for "<strong>${escapeHtml(searchQuery)}</strong>".</p>
           <button class="action-btn-sm" onclick="CampusApp.clearKbSearch()">Reset Search</button>
         </div>
       `;
@@ -961,7 +961,7 @@
         </div>
         <div class="kb-card-footer">
           <button class="action-btn-sm" onclick="CampusApp.triggerQuery('${escapeForJs(item.askPrompt)}')">
-            ≡ƒÆ¼ Ask AI about this
+            💬 Ask AI about this
           </button>
         </div>
       `;
@@ -1046,7 +1046,7 @@
     document.body.appendChild(dlAnchor);
     dlAnchor.click();
     dlAnchor.remove();
-    showToast('≡ƒôÑ Chat transcript downloaded as JSON.');
+    showToast('📥 Chat transcript downloaded as JSON.');
   }
 
   function printChat() {
@@ -1059,7 +1059,7 @@
       AppState.chatHistory = [];
       DOM.chatMessages.innerHTML = '';
       sendInitialGreeting();
-      showToast('Γ£¿ Started fresh AI conversation.');
+      showToast('✨ Started fresh AI conversation.');
     }
   }
 
@@ -1163,13 +1163,13 @@
     },
     copyMessageText: function (text) {
       navigator.clipboard.writeText(text).then(() => {
-        showToast('≡ƒôï Response copied to clipboard!');
+        showToast('📋 Response copied to clipboard!');
       });
     },
     rateResponse: function (btn, direction) {
       btn.style.transform = 'scale(1.3)';
       setTimeout(() => { btn.style.transform = 'scale(1)'; }, 200);
-      showToast(direction === 'up' ? '≡ƒæì Thank you for your feedback!' : '≡ƒæÄ Noted. We will improve our responses.');
+      showToast(direction === 'up' ? '👍 Thank you for your feedback!' : '👎 Noted. We will improve our responses.');
     },
     clearKbSearch: function () {
       DOM.kbSearchInput.value = '';
@@ -1177,7 +1177,7 @@
     },
     refreshAnalytics: function () {
       refreshAnalytics();
-      showToast('≡ƒôè Metrics updated.');
+      showToast('📊 Metrics updated.');
     }
   };
 
@@ -1304,13 +1304,13 @@
     const remembered = localStorage.getItem('campusRememberedUser');
     const rememberedName = localStorage.getItem('campusUserName');
     if (rememberedName) {
-      if (DOM.homeGreetingName) DOM.homeGreetingName.textContent = `Welcome back, ${rememberedName} ≡ƒæï`;
+      if (DOM.homeGreetingName) DOM.homeGreetingName.textContent = `Welcome back, ${rememberedName} 👋`;
       if (DOM.userNameLabel) DOM.userNameLabel.textContent = rememberedName;
       if (DOM.userAvatarInitials) DOM.userAvatarInitials.textContent = rememberedName.substring(0, 2).toUpperCase();
     } else if (remembered) {
       const userPart = remembered.split('@')[0];
       const displayName = userPart.charAt(0).toUpperCase() + userPart.slice(1);
-      if (DOM.homeGreetingName) DOM.homeGreetingName.textContent = `Welcome back, ${displayName} ≡ƒæï`;
+      if (DOM.homeGreetingName) DOM.homeGreetingName.textContent = `Welcome back, ${displayName} 👋`;
       if (DOM.userNameLabel) DOM.userNameLabel.textContent = displayName;
     }
   });
